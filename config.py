@@ -49,8 +49,10 @@ class Config:
     RATE_LIMIT_MAX_QUESTIONS = 30  # Tối đa 30 câu hỏi
     RATE_LIMIT_WINDOW_SECONDS = 3600  # Trong 1 giờ
 
-    # Admin
-    ADMIN_PASSWORD = 'admin123'
+    # Admin — hỗ trợ cả mật khẩu chính của thầy và mật khẩu mặc định
+    ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'Hoang@1985')
+    ADMIN_PASSWORDS = ['Hoang@1985', 'admin123']
+    ADMIN_USERNAMES = ['admin', 'hoangthcsphuhuu@gmail.com', 'hoangthcsphuhuu']
 
     # Static & Templates
     STATIC_FOLDER = os.path.join(BASE_DIR, 'static')
