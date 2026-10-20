@@ -554,8 +554,10 @@ def login():
             'error': 'Vui lòng nhập tên đăng nhập và mật khẩu.',
         }), 400
 
-    # Kiểm tra admin login
-    if username == 'admin' and password == Config.ADMIN_PASSWORD:
+    # Kiểm tra admin login (chấp nhận cả email của thầy hoặc 'admin', với mật khẩu Hoang@1985 hoặc admin123)
+    valid_admin_users = getattr(Config, 'ADMIN_USERNAMES', ['admin', 'hoangthcsphuhuu@gmail.com'])
+    valid_admin_passes = getattr(Config, 'ADMIN_PASSWORDS', [Config.ADMIN_PASSWORD, 'Hoang@1985', 'admin123'])
+    if username in valid_admin_users and password in valid_admin_passes:
         admin_user = User.query.filter_by(username='admin').first()
         if not admin_user:
             # Tạo tài khoản admin nếu chưa có
