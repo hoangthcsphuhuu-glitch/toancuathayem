@@ -222,6 +222,38 @@ function scrollToBottom(smooth = true) {
  * @param {string} text - Văn bản phản hồi thô từ Gemini AI
  * @returns {string} - Chuỗi HTML hoàn chỉnh đã xử lý
  */
+/**
+ * Render một biểu thức LaTeX thành chuỗi HTML bằng KaTeX (kèm xử lý dự phòng an toàn)
+ * @param {string} mathExpr - Biểu thức LaTeX (không kèm dấu $ hoặc $$)
+ * @param {boolean} displayMode - true nếu là công thức khối ($$), false nếu nội dòng ($)
+ * @returns {string} - Chuỗi HTML biểu diễn ký hiệu toán học
+ */
+function renderMathString(mathExpr, displayMode = false) {
+  if (!mathExpr) return '';
+  const cleanMath = mathExpr.trim();
+  if (!cleanMath) return '';
+
+  // Nếu thư viện KaTeX đã nạp sẵn, vẽ trực tiếp sang HTML toán học chuẩn
+  if (window.katex && typeof window.katex.renderToString === 'function') {
+    try {
+      return window.katex.renderToString(cleanMath, {
+        displayMode: displayMode,
+        throwOnError: false,
+        strict: false,
+        trust: true,
+         errorColor: '#FF6B6B'
+      });
+    } catch (e) {
+      console.warn('KaTeX renderToString fallback:', e);
+    }
+  }
+
+  // Dự phòng khi KaTeX đang tải (defer): bọc trong thẻ span đã escape HTML an toàn
+  // để trình duyệt không nuốt dấu < hoặc >, sau đó renderKaTeX() sẽ quét lại
+  const delim = displayMode ? '$$' : '$';
+  return `<span class="math-pending">${delim}${escapeHtml(cleanMath)}${delim}</span>`;
+}
+
 function formatMarkdown(text) {
   if (!text) return '';
 
@@ -231,41 +263,52 @@ function formatMarkdown(text) {
   const inlineCodes = [];
 
   // Bước 1: Trích xuất các khối mã nguồn ```lang ... ```
+  // LƯU Ý QUAN TRỌNG: Placeholder KHÔNG ĐƯỢC dùng dấu _ hoặc * để tránh bị bộ phân tích in nghiêng/đậm làm hỏng!
   text = text.replace(/```([a-zA-Z0-9_-]*)\n([\s\S]*?)```/g, (match, lang, code) => {
     const id = codeBlocks.length;
     codeBlocks.push({ lang: lang || '', code: code.trim() });
-    return `%%%CODEBLOCK_${id}%%%`;
+    return `@@CODEBLOCK${id}@@`;
   });
 
   // Bước 2: Trích xuất công thức toán hiển thị dạng khối $$...$$ và \[...\]
   text = text.replace(/\$\$([\s\S]*?)\$\$/g, (match, math) => {
     const id = displayMath.length;
     displayMath.push(math.trim());
-    return `%%%DISPLAYMATH_${id}%%%`;
+    return `@@DISPLAYMATH${id}@@`;
   });
   text = text.replace(/\\\[([\s\S]*?)\\\]/g, (match, math) => {
     const id = displayMath.length;
     displayMath.push(math.trim());
-    return `%%%DISPLAYMATH_${id}%%%`;
+    return `@@DISPLAYMATH${id}@@`;
   });
 
   // Bước 3: Trích xuất công thức toán nội dòng $...$ và \(...\)
   text = text.replace(/\$([^\$\n]+?)\$/g, (match, math) => {
     const id = inlineMath.length;
     inlineMath.push(math.trim());
-    return `%%%INLINEMATH_${id}%%%`;
+    return `@@INLINEMATH${id}@@`;
   });
   text = text.replace(/\\\(([\s\S]*?)\\\)/g, (match, math) => {
     const id = inlineMath.length;
     inlineMath.push(math.trim());
-    return `%%%INLINEMATH_${id}%%%`;
+    return `@@INLINEMATH${id}@@`;
   });
+
+  // Bước 3b: Bắt tự động các lệnh LaTeX phổ biến nếu AI quên bọc trong dấu $...$
+  text = text.replace(
+    /(\\(?:d?frac|sqrt|widehat|triangle)\{[^{}]*\}(?:\{[^{}]*\})?|\\(?:Rightarrow|Leftrightarrow|leq?|geq?|neq|approx|times|div|cdot|in|notin|subset|parallel|perp|mathbb\{[NZQR]\}))/g,
+    (match) => {
+      const id = inlineMath.length;
+      inlineMath.push(match.trim());
+      return `@@INLINEMATH${id}@@`;
+    }
+  );
 
   // Bước 4: Trích xuất mã nội dòng `...`
   text = text.replace(/`([^`\n]+)`/g, (match, code) => {
     const id = inlineCodes.length;
     inlineCodes.push(code);
-    return `%%%INLINECODE_${id}%%%`;
+    return `@@INLINECODE${id}@@`;
   });
 
   // Bước 5: Thoát ký tự HTML nguy hiểm đối với nội dung văn bản còn lại
@@ -279,8 +322,8 @@ function formatMarkdown(text) {
   // Bước 7: Phân tích in đậm, in nghiêng, gạch ngang
   text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   text = text.replace(/__(.*?)__/g, '<strong>$1</strong>');
-  text = text.replace(/\*([^\*]+?)\*/g, '<em>$1</em>');
-  text = text.replace(/_([^_]+?)_/g, '<em>$1</em>');
+  text = text.replace(/\*([^\*\n]+?)\*/g, '<em>$1</em>');
+  text = text.replace(/(^|\s)_([^_\n]+?)_(?=\s|[.,!?;:]|$)/g, '$1<em>$2</em>');
   text = text.replace(/~~(.*?)~~/g, '<del>$1</del>');
 
   // Bước 8: Phân tích danh sách (Lists: ul, ol)
@@ -343,7 +386,8 @@ function formatMarkdown(text) {
       trimmed.startsWith('<h2>') ||
       trimmed.startsWith('<h3>') ||
       trimmed.startsWith('<h4>') ||
-      trimmed.startsWith('%%%CODEBLOCK_')
+      trimmed.startsWith('@@CODEBLOCK') ||
+      trimmed.startsWith('@@DISPLAYMATH')
     ) {
       return trimmed;
     }
@@ -355,27 +399,27 @@ function formatMarkdown(text) {
   text = htmlBlocks.filter((b) => b.length > 0).join('\n');
 
   // Bước 10: Phục hồi mã nội dòng (Inline Code)
-  text = text.replace(/%%%INLINECODE_(\d+)%%%/g, (m, id) => {
-    return `<code>${escapeHtml(inlineCodes[id])}</code>`;
+  text = text.replace(/@@INLINECODE(\d+)@@/g, (m, id) => {
+    return `<code>${escapeHtml(inlineCodes[Number(id)])}</code>`;
   });
 
   // Phục hồi khối mã nguồn (Code Blocks)
-  text = text.replace(/<p>%%%CODEBLOCK_(\d+)%%%<\/p>/g, '%%%CODEBLOCK_$1%%%');
-  text = text.replace(/%%%CODEBLOCK_(\d+)%%%/g, (m, id) => {
-    const block = codeBlocks[id];
+  text = text.replace(/<p>@@CODEBLOCK(\d+)@@<\/p>/g, '@@CODEBLOCK$1@@');
+  text = text.replace(/@@CODEBLOCK(\d+)@@/g, (m, id) => {
+    const block = codeBlocks[Number(id)];
     const langClass = block.lang ? ` class="language-${escapeHtml(block.lang)}"` : '';
     return `<pre><code${langClass}>${escapeHtml(block.code)}</code></pre>`;
   });
 
-  // Phục hồi công thức khối (Display Math)
-  text = text.replace(/<p>%%%DISPLAYMATH_(\d+)%%%<\/p>/g, '%%%DISPLAYMATH_$1%%%');
-  text = text.replace(/%%%DISPLAYMATH_(\d+)%%%/g, (m, id) => {
-    return `$$${displayMath[id]}$$`;
+  // Phục hồi và vẽ trực tiếp công thức khối (Display Math) bằng KaTeX
+  text = text.replace(/<p>@@DISPLAYMATH(\d+)@@<\/p>/g, '@@DISPLAYMATH$1@@');
+  text = text.replace(/@@DISPLAYMATH(\d+)@@/g, (m, id) => {
+    return `<div class="katex-block-wrapper">${renderMathString(displayMath[Number(id)], true)}</div>`;
   });
 
-  // Phục hồi công thức nội dòng (Inline Math)
-  text = text.replace(/%%%INLINEMATH_(\d+)%%%/g, (m, id) => {
-    return `$${inlineMath[id]}$`;
+  // Phục hồi và vẽ trực tiếp công thức nội dòng (Inline Math) bằng KaTeX
+  text = text.replace(/@@INLINEMATH(\d+)@@/g, (m, id) => {
+    return renderMathString(inlineMath[Number(id)], false);
   });
 
   return text;
