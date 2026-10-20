@@ -1,5 +1,5 @@
 /* Service Worker - Toán Học Vui PWA */
-const CACHE_NAME = 'toan-hoc-vui-v1';
+const CACHE_NAME = 'toan-hoc-vui-v2';
 const STATIC_ASSETS = [
   '/',
   '/static/css/style.css',
