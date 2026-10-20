@@ -1,0 +1,414 @@
+# -*- coding: utf-8 -*-
+"""
+PDF Processor - Trích xuất nội dung từ sách giáo khoa Toán
+Sử dụng PyMuPDF (fitz) để đọc và xử lý file PDF
+"""
+
+import os
+import re
+import json
+import logging
+
+try:
+    import fitz  # PyMuPDF
+except ImportError:
+    fitz = None
+    print("[CẢNH BÁO] PyMuPDF chưa được cài đặt. Chạy: pip install PyMuPDF")
+
+logger = logging.getLogger(__name__)
+
+
+class PDFProcessor:
+    """Xử lý và trích xuất nội dung từ file PDF sách giáo khoa."""
+
+    def __init__(self, pdf_folder, output_folder):
+        """
+        Args:
+            pdf_folder: Thư mục chứa file PDF
+            output_folder: Thư mục lưu file text đã trích xuất
+        """
+        self.pdf_folder = pdf_folder
+        self.output_folder = output_folder
+        self.index_file = os.path.join(output_folder, 'index.json')
+
+    def ensure_output_folder(self):
+        """Tạo thư mục output nếu chưa tồn tại."""
+        os.makedirs(self.output_folder, exist_ok=True)
+
+    def is_already_processed(self):
+        """Kiểm tra xem đã trích xuất PDF chưa."""
+        return os.path.exists(self.index_file)
+
+    def extract_text_from_pdf(self, pdf_path):
+        """
+        Trích xuất toàn bộ text từ một file PDF.
+
+        Args:
+            pdf_path: Đường dẫn file PDF
+
+        Returns:
+            dict: Nội dung theo từng trang {'pages': [...], 'total_pages': int}
+        """
+        if fitz is None:
+            logger.error("PyMuPDF chưa được cài đặt!")
+            return {'pages': [], 'total_pages': 0, 'chapters': []}
+
+        result = {
+            'pages': [],
+            'total_pages': 0,
+            'chapters': [],
+        }
+
+        try:
+            doc = fitz.open(pdf_path)
+            result['total_pages'] = len(doc)
+
+            full_text = []
+            for page_num in range(len(doc)):
+                page = doc[page_num]
+                text = page.get_text("text")
+                if text and text.strip():
+                    result['pages'].append({
+                        'page': page_num + 1,
+                        'content': text.strip(),
+                    })
+                    full_text.append(text.strip())
+
+            doc.close()
+
+            # Phát hiện chương/bài
+            combined_text = '\n'.join(full_text)
+            result['chapters'] = self._detect_chapters(combined_text)
+
+            logger.info(f"Đã trích xuất {len(result['pages'])} trang từ {pdf_path}")
+
+        except Exception as e:
+            logger.error(f"Lỗi khi đọc PDF {pdf_path}: {e}")
+
+        return result
+
+    def _detect_chapters(self, text):
+        """
+        Phát hiện các chương/bài trong nội dung.
+
+        Args:
+            text: Nội dung văn bản đầy đủ
+
+        Returns:
+            list: Danh sách chương/bài phát hiện được
+        """
+        chapters = []
+
+        # Các pattern phổ biến trong SGK Toán
+        patterns = [
+            r'(?:CHƯƠNG|Chương)\s+(\w+)[.:]\s*(.+?)(?:\n|$)',
+            r'(?:BÀI|Bài)\s+(\d+)[.:]\s*(.+?)(?:\n|$)',
+            r'(?:PHẦN|Phần)\s+(\w+)[.:]\s*(.+?)(?:\n|$)',
+            r'§\s*(\d+)[.:]\s*(.+?)(?:\n|$)',
+        ]
+
+        for pattern in patterns:
+            matches = re.finditer(pattern, text)
+            for match in matches:
+                chapter_info = {
+                    'number': match.group(1).strip(),
+                    'title': match.group(2).strip()[:200],  # Giới hạn độ dài
+                    'type': 'chương' if 'CHƯƠNG' in pattern or 'Chương' in pattern
+                            else 'bài' if 'BÀI' in pattern or 'Bài' in pattern
+                            else 'phần' if 'PHẦN' in pattern or 'Phần' in pattern
+                            else 'mục',
+                }
+                # Tránh trùng lặp
+                if chapter_info not in chapters:
+                    chapters.append(chapter_info)
+
+        return chapters
+
+    def process_single_pdf(self, filename, display_name):
+        """
+        Xử lý một file PDF và lưu kết quả.
+
+        Args:
+            filename: Tên file PDF
+            display_name: Tên hiển thị của sách
+
+        Returns:
+            dict: Thông tin về file đã xử lý
+        """
+        pdf_path = os.path.join(self.pdf_folder, filename)
+
+        if not os.path.exists(pdf_path):
+            logger.warning(f"Không tìm thấy file PDF: {pdf_path}")
+            return {
+                'filename': filename,
+                'display_name': display_name,
+                'status': 'not_found',
+                'pages': 0,
+                'chapters': [],
+            }
+
+        logger.info(f"Đang xử lý: {display_name} ({filename})")
+
+        # Trích xuất nội dung
+        result = self.extract_text_from_pdf(pdf_path)
+
+        # Tạo tên file output
+        base_name = os.path.splitext(filename)[0]
+        txt_filename = f"{base_name}.txt"
+        txt_path = os.path.join(self.output_folder, txt_filename)
+
+        # Lưu nội dung text
+        with open(txt_path, 'w', encoding='utf-8') as f:
+            f.write(f"{'=' * 60}\n")
+            f.write(f"  {display_name}\n")
+            f.write(f"  Nguồn: {filename}\n")
+            f.write(f"  Tổng số trang: {result['total_pages']}\n")
+            f.write(f"{'=' * 60}\n\n")
+
+            if result['chapters']:
+                f.write("MỤC LỤC PHÁT HIỆN:\n")
+                f.write("-" * 40 + "\n")
+                for ch in result['chapters']:
+                    f.write(f"  {ch['type'].upper()} {ch['number']}: {ch['title']}\n")
+                f.write("\n" + "=" * 60 + "\n\n")
+
+            for page_info in result['pages']:
+                f.write(f"\n--- Trang {page_info['page']} ---\n")
+                f.write(page_info['content'])
+                f.write("\n")
+
+        info = {
+            'filename': filename,
+            'display_name': display_name,
+            'txt_file': txt_filename,
+            'status': 'processed',
+            'total_pages': result['total_pages'],
+            'extracted_pages': len(result['pages']),
+            'chapters': result['chapters'],
+        }
+
+        logger.info(f"Hoàn thành: {display_name} - {len(result['pages'])} trang đã trích xuất")
+        return info
+
+    def process_all_pdfs(self, pdf_files_dict):
+        """
+        Xử lý tất cả file PDF.
+
+        Args:
+            pdf_files_dict: Dict {filename: display_name}
+
+        Returns:
+            dict: Index chứa thông tin tất cả file đã xử lý
+        """
+        self.ensure_output_folder()
+
+        index = {
+            'processed_files': [],
+            'total_files': len(pdf_files_dict),
+            'processed_count': 0,
+            'not_found_count': 0,
+        }
+
+        for filename, display_name in pdf_files_dict.items():
+            info = self.process_single_pdf(filename, display_name)
+            index['processed_files'].append(info)
+
+            if info['status'] == 'processed':
+                index['processed_count'] += 1
+            else:
+                index['not_found_count'] += 1
+
+        # Lưu file index
+        with open(self.index_file, 'w', encoding='utf-8') as f:
+            json.dump(index, f, ensure_ascii=False, indent=2)
+
+        logger.info(
+            f"Hoàn thành xử lý: {index['processed_count']}/{index['total_files']} file PDF"
+        )
+        return index
+
+    def load_knowledge_base(self, max_chars_per_file=8000):
+        """
+        Tải nội dung knowledge base đã trích xuất.
+
+        Args:
+            max_chars_per_file: Số ký tự tối đa mỗi file (để tiết kiệm token)
+
+        Returns:
+            str: Nội dung knowledge base đã gộp
+        """
+        if not os.path.exists(self.index_file):
+            return ""
+
+        try:
+            with open(self.index_file, 'r', encoding='utf-8') as f:
+                index = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            return ""
+
+        knowledge_parts = []
+
+        for file_info in index.get('processed_files', []):
+            if file_info.get('status') != 'processed':
+                continue
+
+            txt_path = os.path.join(self.output_folder, file_info['txt_file'])
+            if not os.path.exists(txt_path):
+                continue
+
+            try:
+                with open(txt_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+
+                # Lấy phần tóm tắt và mục lục (đầu file)
+                # cùng với một phần nội dung
+                if len(content) > max_chars_per_file:
+                    content = content[:max_chars_per_file] + "\n[...nội dung tiếp theo được lược bỏ...]"
+
+                knowledge_parts.append(
+                    f"\n📚 {file_info['display_name']}:\n{content}\n"
+                )
+
+            except IOError as e:
+                logger.error(f"Lỗi khi đọc {txt_path}: {e}")
+
+        return "\n".join(knowledge_parts) if knowledge_parts else "Chưa có dữ liệu SGK."
+
+    def get_relevant_content(self, query, max_chars=4000):
+        """
+        Tìm nội dung liên quan đến câu hỏi từ knowledge base.
+
+        Args:
+            query: Câu hỏi của học sinh
+            max_chars: Số ký tự tối đa trả về
+
+        Returns:
+            str: Nội dung liên quan
+        """
+        if not os.path.exists(self.index_file):
+            return ""
+
+        query_lower = query.lower()
+
+        # Xác định sách nào liên quan
+        grade_6_keywords = ['lớp 6', 'toán 6', 'tập 1', 'tập một']
+        grade_7_keywords = ['lớp 7', 'toán 7']
+
+        try:
+            with open(self.index_file, 'r', encoding='utf-8') as f:
+                index = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            return ""
+
+        relevant_parts = []
+        total_chars = 0
+
+        for file_info in index.get('processed_files', []):
+            if file_info.get('status') != 'processed':
+                continue
+
+            # Ưu tiên sách phù hợp với lớp
+            display = file_info.get('display_name', '').lower()
+            is_grade_6 = '6' in display
+            is_grade_7 = '7' in display
+
+            relevant_score = 0
+            if any(kw in query_lower for kw in grade_6_keywords) and is_grade_6:
+                relevant_score = 2
+            elif any(kw in query_lower for kw in grade_7_keywords) and is_grade_7:
+                relevant_score = 2
+            else:
+                relevant_score = 1
+
+            # Tìm trong các chương có liên quan
+            for chapter in file_info.get('chapters', []):
+                title = chapter.get('title', '').lower()
+                if any(word in title for word in query_lower.split() if len(word) > 2):
+                    relevant_score += 1
+
+            if relevant_score > 0:
+                txt_path = os.path.join(self.output_folder, file_info['txt_file'])
+                if os.path.exists(txt_path):
+                    try:
+                        with open(txt_path, 'r', encoding='utf-8') as f:
+                            content = f.read()
+
+                        # Trích xuất đoạn liên quan
+                        excerpt = self._extract_relevant_excerpt(content, query, 2000)
+                        if excerpt and total_chars + len(excerpt) <= max_chars:
+                            relevant_parts.append(
+                                f"[{file_info['display_name']}]: {excerpt}"
+                            )
+                            total_chars += len(excerpt)
+                    except IOError:
+                        pass
+
+        return "\n\n".join(relevant_parts) if relevant_parts else ""
+
+    def _extract_relevant_excerpt(self, content, query, max_chars=2000):
+        """
+        Trích xuất đoạn văn bản liên quan nhất từ nội dung.
+
+        Args:
+            content: Nội dung đầy đủ
+            query: Câu hỏi tìm kiếm
+            max_chars: Số ký tự tối đa
+
+        Returns:
+            str: Đoạn trích liên quan
+        """
+        query_words = [w.lower() for w in query.split() if len(w) > 2]
+        if not query_words:
+            return content[:max_chars]
+
+        # Chia content thành các đoạn (theo trang)
+        segments = content.split('--- Trang')
+        if not segments:
+            return content[:max_chars]
+
+        # Tính điểm cho mỗi đoạn
+        scored_segments = []
+        for segment in segments:
+            segment_lower = segment.lower()
+            score = sum(1 for word in query_words if word in segment_lower)
+            if score > 0:
+                scored_segments.append((score, segment.strip()))
+
+        # Sắp xếp theo điểm giảm dần
+        scored_segments.sort(key=lambda x: x[0], reverse=True)
+
+        # Ghép các đoạn có điểm cao nhất
+        result = []
+        total = 0
+        for score, segment in scored_segments[:3]:  # Lấy tối đa 3 đoạn
+            if total + len(segment) <= max_chars:
+                result.append(segment)
+                total += len(segment)
+
+        return "\n...\n".join(result) if result else ""
+
+
+def process_pdfs_on_startup(pdf_folder, output_folder, pdf_files_dict):
+    """
+    Hàm tiện ích để xử lý PDF khi khởi động ứng dụng.
+
+    Args:
+        pdf_folder: Thư mục chứa file PDF
+        output_folder: Thư mục lưu output
+        pdf_files_dict: Dict {filename: display_name}
+
+    Returns:
+        PDFProcessor: Instance đã xử lý xong
+    """
+    processor = PDFProcessor(pdf_folder, output_folder)
+
+    if not processor.is_already_processed():
+        logger.info("Lần chạy đầu tiên - bắt đầu trích xuất PDF...")
+        index = processor.process_all_pdfs(pdf_files_dict)
+        logger.info(
+            f"Đã trích xuất {index['processed_count']}/{index['total_files']} file PDF"
+        )
+    else:
+        logger.info("Knowledge base đã tồn tại, bỏ qua trích xuất PDF.")
+
+    return processor
