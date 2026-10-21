@@ -430,6 +430,16 @@ def get_ai_response(user_message, user_grade=6, chat_history=None):
 # ──────────────────────────────────────────────
 #  Trang chủ & Static Files
 # ──────────────────────────────────────────────
+@app.after_request
+def add_no_cache_headers(response):
+    """Đảm bảo trình duyệt luôn tải phiên bản HTML/JS/CSS mới nhất, không lưu cache cũ."""
+    if request.path == '/' or request.path.endswith(('.js', '.css', '.html')):
+        response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
+        response.headers['Pragma'] = 'no-cache'
+        response.headers['Expires'] = '0'
+    return response
+
+
 @app.route('/')
 def index():
     """Trang chủ."""
