@@ -135,6 +135,23 @@ class PDFProcessor:
         Returns:
             dict: Thông tin về file đã xử lý
         """
+        # Nếu filename đã là file .txt nằm sẵn trong thư mục knowledge_base
+        txt_direct_path = os.path.join(self.output_folder, filename)
+        if filename.endswith('.txt') and os.path.exists(txt_direct_path):
+            with open(txt_direct_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            chapters = self._detect_chapters(content)
+            sections = [s for s in content.split('--- MỤC') if s.strip()]
+            return {
+                'filename': filename,
+                'display_name': display_name,
+                'txt_file': filename,
+                'status': 'processed',
+                'total_pages': len(sections),
+                'extracted_pages': len(sections),
+                'chapters': chapters,
+            }
+
         pdf_path = os.path.join(self.pdf_folder, filename)
 
         if not os.path.exists(pdf_path):
@@ -274,13 +291,14 @@ class PDFProcessor:
 
         return "\n".join(knowledge_parts) if knowledge_parts else "Chưa có dữ liệu SGK."
 
-    def get_relevant_content(self, query, max_chars=4000):
+    def get_relevant_content(self, query, max_chars=4000, user_grade=None):
         """
         Tìm nội dung liên quan đến câu hỏi từ knowledge base.
 
         Args:
             query: Câu hỏi của học sinh
             max_chars: Số ký tự tối đa trả về
+            user_grade: Lớp của học sinh (6 hoặc 7)
 
         Returns:
             str: Nội dung liên quan
@@ -291,8 +309,8 @@ class PDFProcessor:
         query_lower = query.lower()
 
         # Xác định sách nào liên quan
-        grade_6_keywords = ['lớp 6', 'toán 6', 'tập 1', 'tập một']
-        grade_7_keywords = ['lớp 7', 'toán 7']
+        grade_6_keywords = ['lớp 6', 'toán 6', 'khối 6', 'ước chung', 'bội chung', 'ưcln', 'bcnn', 'số nguyên tố', 'hợp số', 'hỗn số']
+        grade_7_keywords = ['lớp 7', 'toán 7', 'khối 7', 'số hữu tỉ', 'số vô tỉ', 'số thực', 'căn bậc hai', 'tỉ lệ thức', 'tỉ lệ thuận', 'tỉ lệ nghịch', 'đa thức', 'đơn thức', 'lăng trụ', 'trọng tâm', 'trực tâm', 'ngoại tiếp', 'nội tiếp']
 
         try:
             with open(self.index_file, 'r', encoding='utf-8') as f:
@@ -300,32 +318,42 @@ class PDFProcessor:
         except (json.JSONDecodeError, IOError):
             return ""
 
-        relevant_parts = []
-        total_chars = 0
-
+        scored_files = []
         for file_info in index.get('processed_files', []):
             if file_info.get('status') != 'processed':
                 continue
 
-            # Ưu tiên sách phù hợp với lớp
             display = file_info.get('display_name', '').lower()
-            is_grade_6 = '6' in display
-            is_grade_7 = '7' in display
+            file_grade = file_info.get('grade')
+            is_grade_6 = (file_grade == 6) or ('6' in display)
+            is_grade_7 = (file_grade == 7) or ('7' in display)
 
-            relevant_score = 0
-            if any(kw in query_lower for kw in grade_6_keywords) and is_grade_6:
-                relevant_score = 2
-            elif any(kw in query_lower for kw in grade_7_keywords) and is_grade_7:
-                relevant_score = 2
-            else:
-                relevant_score = 1
+            relevant_score = 1
+            if any(kw in query_lower for kw in grade_6_keywords):
+                relevant_score += 30 if is_grade_6 else -10
+            elif any(kw in query_lower for kw in grade_7_keywords):
+                relevant_score += 30 if is_grade_7 else -10
+            elif user_grade == 6 and is_grade_6:
+                relevant_score += 15
+            elif user_grade == 7 and is_grade_7:
+                relevant_score += 15
 
-            # Tìm trong các chương có liên quan
+            # Tìm trong các chương có liên quan (bỏ qua từ dừng phổ biến)
+            stop_words = {'bài', 'toán', 'các', 'của', 'một', 'hai', 'học', 'tìm', 'tính', 'cho', 'trong', 'với'}
             for chapter in file_info.get('chapters', []):
                 title = chapter.get('title', '').lower()
-                if any(word in title for word in query_lower.split() if len(word) > 2):
-                    relevant_score += 1
+                if any(word in title for word in query_lower.split() if len(word) > 2 and word not in stop_words):
+                    relevant_score += 2
 
+            scored_files.append((relevant_score, file_info))
+
+        # Ưu tiên duyệt file có điểm cao nhất trước (đúng lớp của học sinh)
+        scored_files.sort(key=lambda x: x[0], reverse=True)
+
+        relevant_parts = []
+        total_chars = 0
+
+        for relevant_score, file_info in scored_files:
             if relevant_score > 0:
                 txt_path = os.path.join(self.output_folder, file_info['txt_file'])
                 if os.path.exists(txt_path):
@@ -333,11 +361,14 @@ class PDFProcessor:
                         with open(txt_path, 'r', encoding='utf-8') as f:
                             content = f.read()
 
-                        # Trích xuất đoạn liên quan
-                        excerpt = self._extract_relevant_excerpt(content, query, 2000)
-                        if excerpt and total_chars + len(excerpt) <= max_chars:
+                        # Trích xuất đoạn liên quan vừa khít với giới hạn max_chars còn lại
+                        remaining_chars = max_chars - total_chars
+                        if remaining_chars <= 200:
+                            break
+                        excerpt = self._extract_relevant_excerpt(content, query, min(2500, remaining_chars))
+                        if excerpt:
                             relevant_parts.append(
-                                f"[{file_info['display_name']}]: {excerpt}"
+                                f"[{file_info['display_name']}]:\n{excerpt}"
                             )
                             total_chars += len(excerpt)
                     except IOError:
@@ -345,7 +376,7 @@ class PDFProcessor:
 
         return "\n\n".join(relevant_parts) if relevant_parts else ""
 
-    def _extract_relevant_excerpt(self, content, query, max_chars=2000):
+    def _extract_relevant_excerpt(self, content, query, max_chars=2500):
         """
         Trích xuất đoạn văn bản liên quan nhất từ nội dung.
 
@@ -357,21 +388,38 @@ class PDFProcessor:
         Returns:
             str: Đoạn trích liên quan
         """
-        query_words = [w.lower() for w in query.split() if len(w) > 2]
+        clean_q = re.sub(r'[?,!.():;"]', ' ', query.lower())
+        query_words = [w for w in clean_q.split() if len(w) >= 2]
         if not query_words:
             return content[:max_chars]
 
-        # Chia content thành các đoạn (theo trang)
-        segments = content.split('--- Trang')
+        # Tạo thêm cụm 2 từ liền kề (bigrams) để tìm chính xác tên bài/khái niệm
+        bigrams = [f"{query_words[i]} {query_words[i+1]}" for i in range(len(query_words) - 1)]
+
+        # Chia content thành các mục chuyên đề (--- MỤC) hoặc theo trang (--- Trang)
+        if '--- MỤC' in content:
+            segments = ['--- MỤC' + s for s in content.split('--- MỤC') if s.strip()]
+        else:
+            segments = content.split('--- Trang')
+
         if not segments:
             return content[:max_chars]
 
         # Tính điểm cho mỗi đoạn
+        is_schedule_query = any(w in clean_q for w in ['tuần', 'tiết', 'phân phối', 'kế hoạch', 'ppct'])
         scored_segments = []
         for segment in segments:
             segment_lower = segment.lower()
-            score = sum(1 for word in query_words if word in segment_lower)
+            first_line = segment_lower.split('\n', 1)[0]
+            word_score = sum(1 for word in query_words if word in segment_lower)
+            bigram_score = sum(3 for bg in bigrams if bg in segment_lower)
+            title_bonus = sum(4 for word in query_words if len(word) > 2 and word in first_line)
+            score = word_score + bigram_score + title_bonus
             if score > 0:
+                if 'phân phối chương trình' in first_line:
+                    score += 15 if is_schedule_query else -8
+                else:
+                    score += 6 if not is_schedule_query else 0
                 scored_segments.append((score, segment.strip()))
 
         # Sắp xếp theo điểm giảm dần
@@ -380,12 +428,15 @@ class PDFProcessor:
         # Ghép các đoạn có điểm cao nhất
         result = []
         total = 0
-        for score, segment in scored_segments[:3]:  # Lấy tối đa 3 đoạn
+        for score, segment in scored_segments[:2]:  # Lấy tối đa 2 mục sát nhất
             if total + len(segment) <= max_chars:
                 result.append(segment)
                 total += len(segment)
+            elif not result:
+                result.append(segment[:max_chars])
+                break
 
-        return "\n...\n".join(result) if result else ""
+        return "\n...\n".join(result) if result else content[:max_chars]
 
 
 def process_pdfs_on_startup(pdf_folder, output_folder, pdf_files_dict):
