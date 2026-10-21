@@ -451,6 +451,89 @@ def static_files(filename):
 # ──────────────────────────────────────────────
 #  Auth: Đăng ký & Đăng nhập
 # ──────────────────────────────────────────────
+import unicodedata
+import re as re_module
+
+
+def _slugify_student_name(full_name, grade=6):
+    """Chuyển Họ và Tên tiếng Việt thành username chuẩn để lưu thống kê."""
+    text = unicodedata.normalize('NFKD', full_name)
+    text = text.encode('ascii', 'ignore').decode('ascii').lower()
+    text = re_module.sub(r'[^a-z0-9]+', '_', text).strip('_')
+    if not text:
+        text = 'hoc_sinh'
+    return f"hs{grade}_{text}"[:30]
+
+
+@app.route('/api/auth/quick-join', methods=['POST'])
+def quick_join():
+    """
+    Cho phép học sinh vào thẳng Chatbot chỉ cần nhập Họ và Tên + Lớp
+    (Không cần đăng ký hay mật khẩu, tự động lưu thống kê).
+    """
+    data = request.get_json() or {}
+    display_name = (
+        data.get('display_name')
+        or data.get('full_name')
+        or data.get('username')
+        or ''
+    ).strip()
+    try:
+        grade = int(data.get('grade', 6))
+    except (ValueError, TypeError):
+        grade = 6
+    if grade not in (6, 7):
+        grade = 6
+
+    if not display_name:
+        return jsonify({
+            'success': False,
+            'error': 'Em vui lòng nhập Họ và tên để vào học nhé!',
+        }), 400
+
+    username = _slugify_student_name(display_name, grade)
+
+    try:
+        user = User.query.filter_by(username=username).first()
+        if not user:
+            user = User(
+                username=username,
+                display_name=display_name,
+                grade=grade,
+            )
+            user.set_password('hocsinh123')
+            db.session.add(user)
+            db.session.flush()
+
+            stats = UserStats(user_id=user.id)
+            db.session.add(stats)
+            db.session.commit()
+            logger.info(f"Học sinh mới vào học: {display_name} (Lớp {grade})")
+        else:
+            user.display_name = display_name
+            user.grade = grade
+            user.update_last_active()
+            db.session.commit()
+            logger.info(f"Học sinh quay lại: {display_name} (Lớp {grade})")
+
+        session['user_id'] = user.id
+        session['username'] = user.username
+        session['is_admin'] = user.is_admin
+
+        return jsonify({
+            'success': True,
+            'message': f'Chào {display_name} (Lớp {grade})! Cùng học Toán nhé! 🎉',
+            'user': user.to_dict(),
+        })
+    except Exception as e:
+        db.session.rollback()
+        logger.error(f"Lỗi quick_join: {e}")
+        return jsonify({
+            'success': False,
+            'error': 'Có lỗi xảy ra. Em vui lòng thử lại nhé!',
+        }), 500
+
+
 @app.route('/api/auth/register', methods=['POST'])
 def register():
     """Đăng ký tài khoản mới."""
