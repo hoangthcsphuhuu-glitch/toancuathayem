@@ -838,6 +838,113 @@ function showAuthModal() {
  */
 
 /**
+ * Cấu trúc Chương trình & Gợi ý theo Bộ sách Kết nối tri thức với cuộc sống (Toán 6 & Toán 7)
+ */
+const CURRICULUM_KNTT = {
+  6: {
+    headerSubtitle: 'Toán Lớp 6 • Bộ sách Kết nối tri thức với cuộc sống (9 Chương • 43 Bài)',
+    sidebarTitle: '📚 Chương trình Toán 6 (KNTT)',
+    welcomeTitle: 'Cẩm nang AI Toán Lớp 6',
+    welcomeSubtitle: 'Hệ thống hóa 9 Chương (Bài 1 – Bài 43), Phân phối 140 tiết (35 tuần), Lý thuyết cốt lõi, Phân dạng toán và Bài tập 4 mức độ.',
+    chapters: [
+      { icon: '📅', title: 'PPCT 35 tuần (140 tiết)', sub: 'Kế hoạch dạy học HK1 & HK2', query: 'Phân phối chương trình 35 tuần Toán 6' },
+      { icon: '🔢', title: 'Chương I: Số tự nhiên', sub: 'Bài 1–7: Tập hợp, Lũy thừa', query: 'Chương I: Tập hợp các số tự nhiên (Bài 1 - Bài 7)' },
+      { icon: '➗', title: 'Chương II: Tính chia hết', sub: 'Bài 8–12: Nguyên tố, ƯCLN, BCNN', query: 'Chương II: Tính chia hết trong tập hợp các số tự nhiên (Bài 8 - Bài 12: Số nguyên tố, ƯCLN, BCNN)' },
+      { icon: '➕', title: 'Chương III: Số nguyên', sub: 'Bài 13–17: Tập Z, Dấu ngoặc', query: 'Chương III: Số nguyên (Bài 13 - Bài 17: Tập Z, Cộng trừ nhân chia, Quy tắc dấu ngoặc)' },
+      { icon: '📐', title: 'Chương IV: Hình phẳng thực tiễn', sub: 'Bài 18–20: Chu vi & Diện tích', query: 'Chương IV: Một số hình phẳng trong thực tiễn (Bài 18 - Bài 20: Chu vi và diện tích)' },
+      { icon: '🦋', title: 'Chương V: Tính đối xứng', sub: 'Bài 21–22: Trục & Tâm đối xứng', query: 'Chương V: Tính đối xứng của hình phẳng trong tự nhiên (Bài 21 - Bài 22)' },
+      { icon: '🍕', title: 'Chương VI: Phân số', sub: 'Bài 23–27: Phép tính & 2 bài toán', query: 'Chương VI: Phân số (Bài 23 - Bài 27: Bốn phép tính và Hai bài toán về phân số)' },
+      { icon: '🔟', title: 'Chương VII: Số thập phân', sub: 'Bài 28–31: Làm tròn & Tỉ số %', query: 'Chương VII: Số thập phân (Bài 28 - Bài 31: Làm tròn, Tỉ số và Tỉ số phần trăm)' },
+      { icon: '📏', title: 'Chương VIII: Hình học cơ bản', sub: 'Bài 32–37: Đoạn thẳng, Trung điểm, Góc', query: 'Chương VIII: Những hình học cơ bản (Bài 32 - Bài 37: Đoạn thẳng, Trung điểm, Góc)' },
+      { icon: '🎲', title: 'Chương IX: Thống kê & Xác suất', sub: 'Bài 38–43: Biểu đồ & Xác suất TN', query: 'Chương IX: Dữ liệu và xác suất thực nghiệm (Bài 38 - Bài 43)' }
+    ],
+    suggested: [
+      { icon: '➗', text: 'Chương II (Bài 11–12): Cách tìm ƯCLN và BCNN của hai số' },
+      { icon: '➕', text: 'Chương III (Bài 14–16): Quy tắc cộng, trừ, nhân số nguyên và dấu ngoặc' },
+      { icon: '📐', text: 'Chương IV (Bài 20): Công thức tính chu vi và diện tích các tứ giác' },
+      { icon: '🍕', text: 'Chương VI (Bài 25–27): Các phép tính phân số và Hai bài toán về phân số' },
+      { icon: '📏', text: 'Chương VIII (Bài 34–35): Tính độ dài đoạn thẳng và trung điểm đoạn thẳng' },
+      { icon: '🎲', text: 'Chương IX (Bài 43): Cách tính xác suất thực nghiệm của một sự kiện' }
+    ]
+  },
+  7: {
+    headerSubtitle: 'Toán Lớp 7 • Bộ sách Kết nối tri thức với cuộc sống (10 Chương • 37 Bài)',
+    sidebarTitle: '📚 Chương trình Toán 7 (KNTT)',
+    welcomeTitle: 'Cẩm nang AI Toán Lớp 7',
+    welcomeSubtitle: 'Hệ thống hóa 10 Chương (Bài 1 – Bài 37), Phân phối 140 tiết (35 tuần), Lý thuyết cốt lõi, Phân dạng toán và Bài tập 4 mức độ.',
+    chapters: [
+      { icon: '📅', title: 'PPCT 35 tuần (140 tiết)', sub: 'Kế hoạch dạy học HK1 & HK2', query: 'Phân phối chương trình 35 tuần Toán 7' },
+      { icon: '➗', title: 'Chương I: Số hữu tỉ', sub: 'Bài 1–4: Tập Q, Lũy thừa, Chuyển vế', query: 'Chương I: Số hữu tỉ (Bài 1 - Bài 4: Tập Q, Lũy thừa, Quy tắc chuyển vế)' },
+      { icon: '√', title: 'Chương II: Số thực', sub: 'Bài 5–7: Căn bậc hai, Giá trị tuyệt đối', query: 'Chương II: Số thực (Bài 5 - Bài 7: Số vô tỉ, Căn bậc hai số học, Giá trị tuyệt đối)' },
+      { icon: '📐', title: 'Chương III: Góc & Đường song song', sub: 'Bài 8–11: Tiên đề Euclid, Định lí', query: 'Chương III: Góc và đường thẳng song song (Bài 8 - Bài 11: Tia phân giác, Tiên đề Euclid)' },
+      { icon: '🔺', title: 'Chương IV: Tam giác bằng nhau', sub: 'Bài 12–16: c.c.c, c.g.c, g.c.g, Cân', query: 'Chương IV: Tam giác bằng nhau (Bài 12 - Bài 16: c.c.c, c.g.c, g.c.g, Tam giác cân, Đường trung trực)' },
+      { icon: '📊', title: 'Chương V: Thu thập & Biểu diễn dữ liệu', sub: 'Bài 17–19: Biểu đồ quạt tròn, đoạn thẳng', query: 'Chương V: Thu thập và biểu diễn dữ liệu (Bài 17 - Bài 19: Biểu đồ hình quạt tròn, đoạn thẳng)' },
+      { icon: '⚖️', title: 'Chương VI: Tỉ lệ thức & Đại lượng tỉ lệ', sub: 'Bài 20–23: Dãy tỉ số, Tỉ lệ thuận/nghịch', query: 'Chương VI: Tỉ lệ thức và đại lượng tỉ lệ (Bài 20 - Bài 23: Dãy tỉ số bằng nhau, Tỉ lệ thuận, Tỉ lệ nghịch)' },
+      { icon: '📝', title: 'Chương VII: Biểu thức & Đa thức', sub: 'Bài 24–28: Đa thức một biến, Nghiệm', query: 'Chương VII: Biểu thức đại số và đa thức một biến (Bài 24 - Bài 28: Bậc, hệ số, nghiệm và 4 phép tính đa thức)' },
+      { icon: '🎲', title: 'Chương VIII: Biến cố & Xác suất', sub: 'Bài 29–30: Xác suất của biến cố', query: 'Chương VIII: Làm quen với biến cố và xác suất của biến cố (Bài 29 - Bài 30)' },
+      { icon: '🧭', title: 'Chương IX: Quan hệ trong tam giác', sub: 'Bài 31–35: Bất đẳng thức, 4 đường đồng quy', query: 'Chương IX: Quan hệ giữa các yếu tố trong một tam giác (Bài 31 - Bài 35: Bất đẳng thức tam giác, 4 đường đồng quy)' },
+      { icon: '📦', title: 'Chương X: Hình khối thực tiễn', sub: 'Bài 36–37: HHCN, Lập phương, Lăng trụ', query: 'Chương X: Một số hình khối trong thực tiễn (Bài 36 - Bài 37: Hình hộp chữ nhật, Hình lập phương, Lăng trụ đứng)' }
+    ],
+    suggested: [
+      { icon: '➗', text: 'Chương I (Bài 3–4): Công thức lũy thừa số hữu tỉ và quy tắc chuyển vế tìm x' },
+      { icon: '√', text: 'Chương II (Bài 6–7): Căn bậc hai số học và cách giải bài toán chứa giá trị tuyệt đối |x|' },
+      { icon: '🔺', text: 'Chương IV (Bài 13–16): Các trường hợp bằng nhau của hai tam giác (c.c.c, c.g.c, g.c.g)' },
+      { icon: '⚖️', text: 'Chương VI (Bài 20–23): Tính chất dãy tỉ số bằng nhau, đại lượng tỉ lệ thuận và tỉ lệ nghịch' },
+      { icon: '📝', text: 'Chương VII (Bài 25–28): Cách thu gọn, tìm bậc, hệ số và tìm nghiệm của đa thức một biến' },
+      { icon: '🧭', text: 'Chương IX (Bài 34–35): Tính chất 4 đường đồng quy trong tam giác (trung tuyến, phân giác, trung trực, đường cao)' }
+    ]
+  }
+};
+
+/**
+ * Cập nhật giao diện Mục lục Chương và Câu hỏi gợi ý theo Lớp 6 hoặc Lớp 7 (Kết nối tri thức)
+ */
+function renderCurriculumUI(grade) {
+  const cfg = CURRICULUM_KNTT[grade] || CURRICULUM_KNTT[6];
+
+  const headerSub = document.getElementById('chatHeaderSubtitle');
+  if (headerSub) headerSub.textContent = cfg.headerSubtitle;
+
+  const sidebarTitle = document.getElementById('sidebarChapterTitle');
+  if (sidebarTitle) sidebarTitle.textContent = cfg.sidebarTitle;
+
+  const welcomeTitle = document.getElementById('welcomeTitle');
+  if (welcomeTitle) welcomeTitle.textContent = cfg.welcomeTitle;
+
+  const welcomeSub = document.getElementById('welcomeSubtitle');
+  if (welcomeSub) welcomeSub.textContent = cfg.welcomeSubtitle;
+
+  const chapterList = document.getElementById('chapterList');
+  if (chapterList) {
+    chapterList.innerHTML = cfg.chapters
+      .map(
+        (ch) => `
+      <li class="topic-item" onclick="askTopic('${escapeHtml(ch.query)}')">
+        <span class="topic-icon">${ch.icon}</span>
+        <div class="topic-info">
+          <span class="topic-title">${escapeHtml(ch.title)}</span>
+          <small class="topic-sub">${escapeHtml(ch.sub)}</small>
+        </div>
+      </li>`
+      )
+      .join('');
+  }
+
+  const suggestedContainer = document.getElementById('suggestedQuestions');
+  if (suggestedContainer) {
+    suggestedContainer.innerHTML = cfg.suggested
+      .map(
+        (item) => `
+      <button class="suggested-btn" onclick="sendSuggested(this)">
+        <span class="suggested-icon">${item.icon}</span>
+        <span>${escapeHtml(item.text)}</span>
+      </button>`
+      )
+      .join('');
+  }
+}
+
+/**
  * Lựa chọn khối lớp học (Lớp 6 hoặc Lớp 7)
  * Cập nhật đồng bộ tất cả các nút trên desktop, mobile và profile
  * @param {number|string} grade - 6 hoặc 7
@@ -863,13 +970,16 @@ window.selectGrade = function (grade) {
   // Cập nhật nhãn lớp học trong profile người dùng
   const profileGrade = document.getElementById('profileGrade');
   if (profileGrade) {
-    profileGrade.textContent = `Lớp ${g}`;
+    profileGrade.textContent = `Lớp ${g} • Kết nối tri thức`;
   }
 
-  // Cập nhật sẵn vào select box đăng ký nếu người dùng chưa chọn
-  const regGrade = document.getElementById('regGrade');
-  if (regGrade && !regGrade.value) {
-    regGrade.value = g.toString();
+  // Cập nhật giao diện Chương & Câu hỏi gợi ý theo lớp tương ứng
+  renderCurriculumUI(g);
+
+  // Cập nhật sẵn vào select box vào học nhanh nếu có
+  const studentGrade = document.getElementById('studentGrade');
+  if (studentGrade) {
+    studentGrade.value = g.toString();
   }
 };
 
@@ -1032,7 +1142,7 @@ window.askTopic = function (topicName) {
     closeSidebar();
   }
 
-  const prompt = `Thầy ơi, thầy hãy tóm tắt kiến thức trọng tâm và hướng dẫn các dạng bài tập tiêu biểu về chủ đề "${topicName}" môn Toán lớp ${state.currentGrade} cho em nhé!`;
+  const prompt = `Thầy ơi, thầy hãy tóm tắt lý thuyết trọng tâm, công thức và ví dụ minh họa của "${topicName}" (Bộ sách Kết nối tri thức với cuộc sống - Toán lớp ${state.currentGrade}) cho em nhé!`;
 
   const chatInput = document.getElementById('chatInput');
   if (chatInput) {
@@ -1233,7 +1343,7 @@ window.sendMessage = async function () {
         'Content-Type': 'application/json'
       },
       credentials: 'same-origin',
-      body: JSON.stringify({ message: rawText })
+      body: JSON.stringify({ message: rawText, grade: state.currentGrade })
     });
 
     const data = await response.json();
@@ -1483,7 +1593,7 @@ function registerServiceWorker() {
   if ('caches' in window) {
     caches.keys().then((keys) => {
       keys.forEach((key) => {
-        if (key !== 'toan-hoc-vui-v4') {
+        if (key !== 'toan-hoc-vui-v5') {
           caches.delete(key);
         }
       });
@@ -1492,7 +1602,7 @@ function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register('/static/sw.js?v=4')
+        .register('/static/sw.js?v=5')
         .then((reg) => {
           reg.update();
           console.log('✅ Service Worker đã được kích hoạt thành công:', reg.scope);
