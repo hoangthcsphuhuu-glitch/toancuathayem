@@ -26,59 +26,29 @@
   <!-- Toast Container -->
   <div class="toast-container" id="toastContainer"></div>
 
-  <!-- ========== AUTH MODAL ========== -->
+  <!-- ========== AUTH MODAL (VÀO HỌC NHANH CHỈ CẦN HỌ TÊN) ========== -->
   <div class="auth-overlay" id="authOverlay">
     <div class="auth-card">
       <div class="auth-header">
         <span class="auth-logo">📐</span>
         <h2>Toán Học Vui</h2>
-        <p>Trợ lý AI Toán lớp 6, 7</p>
+        <p>Trợ lý AI Toán lớp 6, 7 — Thầy Lý Hoàng Em</p>
       </div>
       <div class="auth-body">
-        <div class="auth-tabs">
-          <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')">Đăng nhập</button>
-          <button class="auth-tab" id="tabRegister" onclick="switchAuthTab('register')">Đăng ký</button>
-        </div>
-
-        <!-- Login Form -->
-        <form id="loginForm" onsubmit="handleLogin(event)">
+        <form id="quickJoinForm" onsubmit="handleQuickJoin(event)">
           <div class="form-group">
-            <label for="loginUsername">Tên đăng nhập</label>
-            <input type="text" id="loginUsername" class="form-input" placeholder="Nhập tên đăng nhập" required autocomplete="username">
+            <label for="studentFullname">Họ và tên của em</label>
+            <input type="text" id="studentFullname" class="form-input" placeholder="Ví dụ: Nguyễn Văn An" required autocomplete="name">
           </div>
           <div class="form-group">
-            <label for="loginPassword">Mật khẩu</label>
-            <input type="password" id="loginPassword" class="form-input" placeholder="Nhập mật khẩu" required autocomplete="current-password">
-          </div>
-          <button type="submit" class="btn btn-primary" id="btnLogin">
-            <span>🚀</span> Đăng nhập
-          </button>
-        </form>
-
-        <!-- Register Form -->
-        <form id="registerForm" class="hidden" onsubmit="handleRegister(event)">
-          <div class="form-group">
-            <label for="regFullname">Họ và tên</label>
-            <input type="text" id="regFullname" class="form-input" placeholder="Nguyễn Văn A" required>
-          </div>
-          <div class="form-group">
-            <label for="regUsername">Tên đăng nhập</label>
-            <input type="text" id="regUsername" class="form-input" placeholder="Chọn tên đăng nhập" required autocomplete="username">
-          </div>
-          <div class="form-group">
-            <label for="regPassword">Mật khẩu</label>
-            <input type="password" id="regPassword" class="form-input" placeholder="Tối thiểu 4 ký tự" required minlength="4" autocomplete="new-password">
-          </div>
-          <div class="form-group">
-            <label for="regGrade">Lớp</label>
-            <select id="regGrade" class="form-input" required>
-              <option value="">Chọn lớp</option>
-              <option value="6">Lớp 6</option>
+            <label for="studentGrade">Em học lớp mấy?</label>
+            <select id="studentGrade" class="form-input" required>
+              <option value="6" selected>Lớp 6</option>
               <option value="7">Lớp 7</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary" id="btnRegister">
-            <span>✨</span> Đăng ký tài khoản
+          <button type="submit" class="btn btn-primary" id="btnQuickJoin">
+            <span>🚀</span> Vào học ngay
           </button>
         </form>
       </div>
@@ -253,6 +223,6 @@
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 
   <!-- App JS -->
-  <script src="/static/js/app.js?v=2"></script>
+  <script src="/static/js/app.js?v=3"></script>
 </body>
 </html>
