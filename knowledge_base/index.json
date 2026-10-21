@@ -1,0 +1,47 @@
+{
+  "processed_files": [
+    {
+      "filename": "cam_nang_toan_6.txt",
+      "display_name": "Cẩm nang chuyên sâu Toán 6 (Chân trời sáng tạo)",
+      "txt_file": "cam_nang_toan_6.txt",
+      "grade": 6,
+      "status": "processed",
+      "total_pages": 35,
+      "extracted_pages": 35,
+      "chapters": [
+        {"number": "1", "title": "Số tự nhiên (Tập hợp, Lũy thừa, Chia hết, Số nguyên tố, ƯCLN, BCNN)", "type": "chương"},
+        {"number": "2", "title": "Số nguyên (Tập hợp Z, Cộng trừ nhân chia số nguyên)", "type": "chương"},
+        {"number": "3", "title": "Hình học trực quan - Các hình phẳng trong thực tiễn (Chu vi, diện tích)", "type": "chương"},
+        {"number": "4", "title": "Một số yếu tố thống kê (Bảng dữ liệu, Biểu đồ tranh, Biểu đồ cột, cột kép)", "type": "chương"},
+        {"number": "5", "title": "Phân số (So sánh, Cộng trừ nhân chia phân số, Hỗn số, Hai bài toán phân số)", "type": "chương"},
+        {"number": "6", "title": "Số thập phân và Tỉ số phần trăm (Làm tròn, Bài toán lãi suất, giảm giá)", "type": "chương"},
+        {"number": "7", "title": "Tính đối xứng của hình phẳng (Trục đối xứng, Tâm đối xứng)", "type": "chương"},
+        {"number": "8", "title": "Hình học phẳng - Các hình hình học cơ bản (Điểm, Đường thẳng, Tia, Đoạn thẳng, Trung điểm, Góc)", "type": "chương"},
+        {"number": "9", "title": "Một số yếu tố xác suất (Phép thử nghiệm, Sự kiện, Xác suất thực nghiệm)", "type": "chương"}
+      ]
+    },
+    {
+      "filename": "cam_nang_toan_7.txt",
+      "display_name": "Cẩm nang chuyên sâu Toán 7 (Chân trời sáng tạo)",
+      "txt_file": "cam_nang_toan_7.txt",
+      "grade": 7,
+      "status": "processed",
+      "total_pages": 35,
+      "extracted_pages": 35,
+      "chapters": [
+        {"number": "1", "title": "Số hữu tỉ (Tập Q, Các phép tính, Lũy thừa, Quy tắc dấu ngoặc và chuyển vế)", "type": "chương"},
+        {"number": "2", "title": "Số thực (Số vô tỉ, Căn bậc hai số học, Giá trị tuyệt đối, Làm tròn số, BMI)", "type": "chương"},
+        {"number": "3", "title": "Các hình khối trong thực tiễn (Hình hộp chữ nhật, Hình lập phương, Lăng trụ đứng)", "type": "chương"},
+        {"number": "4", "title": "Góc và đường thẳng song song (Góc kề bù, đối đỉnh, Tia phân giác, Tiên đề Euclid)", "type": "chương"},
+        {"number": "5", "title": "Một số yếu tố thống kê (Phân loại dữ liệu, Biểu đồ hình quạt tròn, Biểu đồ đoạn thẳng)", "type": "chương"},
+        {"number": "6", "title": "Các đại lượng tỉ lệ (Tỉ lệ thức, Dãy tỉ số bằng nhau, Tỉ lệ thuận, Tỉ lệ nghịch)", "type": "chương"},
+        {"number": "7", "title": "Biểu thức đại số và Đa thức một biến (Đơn thức, Đa thức, Nghiệm, Cộng trừ nhân chia đa thức)", "type": "chương"},
+        {"number": "8", "title": "Hình học phẳng - Tam giác (Tam giác bằng nhau, Tam giác cân, Đường vuông góc, 4 đường đồng quy)", "type": "chương"},
+        {"number": "9", "title": "Một số yếu tố xác suất (Biến cố chắc chắn, không thể, ngẫu nhiên, Công thức xác suất)", "type": "chương"}
+      ]
+    }
+  ],
+  "total_files": 2,
+  "processed_count": 2,
+  "not_found_count": 0
+}
