@@ -347,7 +347,7 @@ def get_ai_response(user_message, user_grade=6, chat_history=None):
         return _RESPONSE_CACHE[cache_key]
 
     try:
-        # Tìm nội dung Cẩm nang chuyên sâu Toán 6 & Toán 7 (Chân trời sáng tạo) liên quan đến câu hỏi
+        # Tìm nội dung Cẩm nang chuyên sâu Toán 6 & Toán 7 (Kết nối tri thức với cuộc sống) liên quan đến câu hỏi
         relevant_content = ""
         if pdf_processor:
             relevant_content = pdf_processor.get_relevant_content(
@@ -355,7 +355,7 @@ def get_ai_response(user_message, user_grade=6, chat_history=None):
             )
 
         # Xây dựng context gọn nhẹ để tăng tốc độ phản hồi
-        context = relevant_content if relevant_content else "Áp dụng chuẩn kiến thức Cẩm nang & SGK Toán Chân trời sáng tạo (GDPT 2018)."
+        context = relevant_content if relevant_content else "Áp dụng chuẩn kiến thức Cẩm nang & SGK Toán Kết nối tri thức với cuộc sống (GDPT 2018)."
 
         # Tạo system prompt (dùng .replace thay vì .format để không xung đột với dấu ngoặc nhọn {a}{b} của LaTeX)
         system_prompt = (
