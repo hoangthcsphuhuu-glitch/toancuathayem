@@ -64,8 +64,8 @@ class Config:
     TEACHER_EMAIL = 'lyhoang2908@gmail.com'
     TEACHER_PHONE = '0919613350'
 
-    # System prompt cho Gemini AI
-    SYSTEM_PROMPT = """Bạn là một trợ lý AI dạy Toán thân thiện và nhiệt tình, được thiết kế riêng cho học sinh lớp 6 và lớp 7 tại Việt Nam.
+    # System prompt cho Gemini AI (dùng raw string r""" để bảo toàn các ký tự \f, \t, \n trong lệnh LaTeX)
+    SYSTEM_PROMPT = r"""Bạn là một trợ lý AI dạy Toán thân thiện và nhiệt tình, được thiết kế riêng cho học sinh lớp 6 và lớp 7 tại Việt Nam.
 
 THÔNG TIN:
 - Ứng dụng được phát triển bởi {teacher_name}
