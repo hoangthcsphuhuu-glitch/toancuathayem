@@ -9,15 +9,15 @@
       "total_pages": 35,
       "extracted_pages": 35,
       "chapters": [
-        {"number": "1", "title": "Số tự nhiên (Tập hợp, Lũy thừa, Chia hết, Số nguyên tố, ƯCLN, BCNN)", "type": "chương"},
-        {"number": "2", "title": "Số nguyên (Tập hợp Z, Cộng trừ nhân chia số nguyên)", "type": "chương"},
-        {"number": "3", "title": "Hình học trực quan - Các hình phẳng trong thực tiễn (Chu vi, diện tích)", "type": "chương"},
-        {"number": "4", "title": "Một số yếu tố thống kê (Bảng dữ liệu, Biểu đồ tranh, Biểu đồ cột, cột kép)", "type": "chương"},
-        {"number": "5", "title": "Phân số (So sánh, Cộng trừ nhân chia phân số, Hỗn số, Hai bài toán phân số)", "type": "chương"},
-        {"number": "6", "title": "Số thập phân và Tỉ số phần trăm (Làm tròn, Bài toán lãi suất, giảm giá)", "type": "chương"},
-        {"number": "7", "title": "Tính đối xứng của hình phẳng (Trục đối xứng, Tâm đối xứng)", "type": "chương"},
-        {"number": "8", "title": "Hình học phẳng - Các hình hình học cơ bản (Điểm, Đường thẳng, Tia, Đoạn thẳng, Trung điểm, Góc)", "type": "chương"},
-        {"number": "9", "title": "Một số yếu tố xác suất (Phép thử nghiệm, Sự kiện, Xác suất thực nghiệm)", "type": "chương"}
+        {"number": "I", "title": "Tập hợp các số tự nhiên (Bài 1 - Bài 7: Tập hợp, Lũy thừa, Thứ tự thực hiện phép tính)", "type": "chương"},
+        {"number": "II", "title": "Tính chia hết trong tập hợp các số tự nhiên (Bài 8 - Bài 12: Dấu hiệu chia hết, Số nguyên tố, ƯCLN, BCNN)", "type": "chương"},
+        {"number": "III", "title": "Số nguyên (Bài 13 - Bài 17: Tập Z, Cộng trừ nhân chia số nguyên, Quy tắc dấu ngoặc)", "type": "chương"},
+        {"number": "IV", "title": "Một số hình phẳng trong thực tiễn (Bài 18 - Bài 20: Tam giác đều, Hình vuông, Lục giác đều, HCN, Hình thoi, HBH, Hình thang cân, Chu vi và diện tích)", "type": "chương"},
+        {"number": "V", "title": "Tính đối xứng của hình phẳng trong tự nhiên (Bài 21 - Bài 22: Hình có trục đối xứng, Hình có tâm đối xứng)", "type": "chương"},
+        {"number": "VI", "title": "Phân số (Bài 23 - Bài 27: Phân số bằng nhau, So sánh, Hỗn số dương, Cộng trừ nhân chia phân số, Hai bài toán về phân số)", "type": "chương"},
+        {"number": "VII", "title": "Số thập phân (Bài 28 - Bài 31: Tính toán số thập phân, Làm tròn và ước lượng, Tỉ số và tỉ số phần trăm)", "type": "chương"},
+        {"number": "VIII", "title": "Những hình học cơ bản (Bài 32 - Bài 37: Điểm, Đường thẳng, Tia, Đoạn thẳng, Trung điểm, Góc, Số đo góc)", "type": "chương"},
+        {"number": "IX", "title": "Dữ liệu và xác suất thực nghiệm (Bài 38 - Bài 43: Bảng thống kê, Biểu đồ tranh, Biểu đồ cột, Cột kép, Xác suất thực nghiệm)", "type": "chương"}
       ]
     },
     {
@@ -29,15 +29,16 @@
       "total_pages": 35,
       "extracted_pages": 35,
       "chapters": [
-        {"number": "1", "title": "Số hữu tỉ (Tập Q, Các phép tính, Lũy thừa, Quy tắc dấu ngoặc và chuyển vế)", "type": "chương"},
-        {"number": "2", "title": "Số thực (Số vô tỉ, Căn bậc hai số học, Giá trị tuyệt đối, Làm tròn số, BMI)", "type": "chương"},
-        {"number": "3", "title": "Các hình khối trong thực tiễn (Hình hộp chữ nhật, Hình lập phương, Lăng trụ đứng)", "type": "chương"},
-        {"number": "4", "title": "Góc và đường thẳng song song (Góc kề bù, đối đỉnh, Tia phân giác, Tiên đề Euclid)", "type": "chương"},
-        {"number": "5", "title": "Một số yếu tố thống kê (Phân loại dữ liệu, Biểu đồ hình quạt tròn, Biểu đồ đoạn thẳng)", "type": "chương"},
-        {"number": "6", "title": "Các đại lượng tỉ lệ (Tỉ lệ thức, Dãy tỉ số bằng nhau, Tỉ lệ thuận, Tỉ lệ nghịch)", "type": "chương"},
-        {"number": "7", "title": "Biểu thức đại số và Đa thức một biến (Đơn thức, Đa thức, Nghiệm, Cộng trừ nhân chia đa thức)", "type": "chương"},
-        {"number": "8", "title": "Hình học phẳng - Tam giác (Tam giác bằng nhau, Tam giác cân, Đường vuông góc, 4 đường đồng quy)", "type": "chương"},
-        {"number": "9", "title": "Một số yếu tố xác suất (Biến cố chắc chắn, không thể, ngẫu nhiên, Công thức xác suất)", "type": "chương"}
+        {"number": "I", "title": "Số hữu tỉ (Bài 1 - Bài 4: Tập Q, Cộng trừ nhân chia, Lũy thừa, Thứ tự thực hiện phép tính, Quy tắc chuyển vế)", "type": "chương"},
+        {"number": "II", "title": "Số thực (Bài 5 - Bài 7: Số thập phân vô hạn tuần hoàn, Số vô tỉ, Căn bậc hai số học, Tập R, Giá trị tuyệt đối)", "type": "chương"},
+        {"number": "III", "title": "Góc và đường thẳng song song (Bài 8 - Bài 11: Góc kề bù, đối đỉnh, Tia phân giác, Tiên đề Euclid, Định lí)", "type": "chương"},
+        {"number": "IV", "title": "Tam giác bằng nhau (Bài 12 - Bài 16: Tổng 3 góc, Tam giác bằng nhau c.c.c, c.g.c, g.c.g, Tam giác vuông, Tam giác cân, Đường trung trực)", "type": "chương"},
+        {"number": "V", "title": "Thu thập và biểu diễn dữ liệu (Bài 17 - Bài 19: Phân loại dữ liệu, Biểu đồ hình quạt tròn, Biểu đồ đoạn thẳng)", "type": "chương"},
+        {"number": "VI", "title": "Tỉ lệ thức và đại lượng tỉ lệ (Bài 20 - Bài 23: Tỉ lệ thức, Dãy tỉ số bằng nhau, Đại lượng tỉ lệ thuận, Đại lượng tỉ lệ nghịch)", "type": "chương"},
+        {"number": "VII", "title": "Biểu thức đại số và đa thức một biến (Bài 24 - Bài 28: Đơn thức, Đa thức một biến, Nghiệm, Cộng trừ nhân chia đa thức)", "type": "chương"},
+        {"number": "VIII", "title": "Làm quen với biến cố và xác suất của biến cố (Bài 29 - Bài 30: Biến cố chắc chắn, không thể, ngẫu nhiên, Công thức xác suất)", "type": "chương"},
+        {"number": "IX", "title": "Quan hệ giữa các yếu tố trong một tam giác (Bài 31 - Bài 35: Góc và cạnh đối diện, Đường vuông góc và đường xiên, Bất đẳng thức tam giác, 4 đường đồng quy)", "type": "chương"},
+        {"number": "X", "title": "Một số hình khối trong thực tiễn (Bài 36 - Bài 37: Hình hộp chữ nhật, Hình lập phương, Lăng trụ đứng tam giác và tứ giác)", "type": "chương"}
       ]
     }
   ],
