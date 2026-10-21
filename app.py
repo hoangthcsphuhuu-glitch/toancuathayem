@@ -779,6 +779,16 @@ def chat():
         session.clear()
         return jsonify({'success': False, 'error': 'Phiên đăng nhập hết hạn.'}), 401
 
+    # Đồng bộ lớp học (6 hoặc 7) nếu học sinh chuyển lớp trên thanh công cụ
+    req_grade = data.get('grade')
+    if req_grade is not None:
+        try:
+            g_int = int(req_grade)
+            if g_int in (6, 7) and user.grade != g_int:
+                user.grade = g_int
+        except (ValueError, TypeError):
+            pass
+
     try:
         # Lấy lịch sử chat gần đây
         recent_messages = ChatMessage.query.filter_by(user_id=user_id) \
