@@ -497,6 +497,70 @@ async function checkAuth() {
 }
 
 /**
+ * Xử lý vào học nhanh chỉ bằng Họ và Tên + Lớp (Không cần đăng ký/mật khẩu)
+ * @param {Event} event - Sự kiện submit form
+ */
+window.handleQuickJoin = async function (event) {
+  if (event) event.preventDefault();
+
+  const fullnameInput = document.getElementById('studentFullname');
+  const gradeInput = document.getElementById('studentGrade');
+  const btnQuickJoin = document.getElementById('btnQuickJoin');
+
+  if (!fullnameInput) return;
+
+  const display_name = fullnameInput.value.trim();
+  const grade = gradeInput ? parseInt(gradeInput.value, 10) || 6 : 6;
+
+  if (!display_name) {
+    showToast('Em vui lòng nhập Họ và tên để vào học nhé!', 'error');
+    fullnameInput.focus();
+    return;
+  }
+
+  const originalBtnHtml = btnQuickJoin ? btnQuickJoin.innerHTML : '';
+  if (btnQuickJoin) {
+    btnQuickJoin.disabled = true;
+    btnQuickJoin.innerHTML = '<span>⏳</span> Đang vào lớp...';
+  }
+
+  try {
+    const res = await fetch('/api/auth/quick-join', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({ display_name, grade })
+    });
+
+    const data = await res.json();
+
+    if (res.ok && data.success) {
+      localStorage.setItem('toan_hoc_vui_student_name', display_name);
+      localStorage.setItem('toan_hoc_vui_grade', grade.toString());
+
+      showToast(data.message || `Chào ${display_name}! Cùng học Toán nhé! 🎉`, 'success');
+      state.currentUser = data.user;
+      selectGrade(grade);
+
+      showAppContainer();
+      loadChatHistory();
+    } else {
+      showToast(data.error || 'Không thể vào học. Em vui lòng thử lại nhé!', 'error');
+    }
+  } catch (err) {
+    console.error('Lỗi khi vào học nhanh:', err);
+    showToast('Không thể kết nối đến máy chủ. Em vui lòng thử lại nhé!', 'error');
+  } finally {
+    if (btnQuickJoin) {
+      btnQuickJoin.disabled = false;
+      btnQuickJoin.innerHTML = originalBtnHtml;
+    }
+  }
+};
+
+/**
  * Chuyển đổi giữa tab Đăng nhập và Đăng ký trên cửa sổ Modal
  * @param {string} tab - 'login' hoặc 'register'
  */
@@ -736,7 +800,18 @@ function showAuthModal() {
   if (authOverlay) authOverlay.classList.remove('hidden');
   if (appContainer) appContainer.classList.add('hidden');
 
-  switchAuthTab('login');
+  const fullnameInput = document.getElementById('studentFullname');
+  const gradeInput = document.getElementById('studentGrade');
+  if (fullnameInput) {
+    const savedName = localStorage.getItem('toan_hoc_vui_student_name');
+    if (savedName && !fullnameInput.value) {
+      fullnameInput.value = savedName;
+    }
+    setTimeout(() => fullnameInput.focus(), 100);
+  }
+  if (gradeInput && state.currentGrade) {
+    gradeInput.value = state.currentGrade.toString();
+  }
 }
 
 /**
