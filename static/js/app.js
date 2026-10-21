@@ -257,8 +257,22 @@ function renderMathString(mathExpr, displayMode = false) {
 function formatMarkdown(text) {
   if (!text) return '';
 
-  // Làm sạch các chuỗi đánh dấu cũ nếu còn sót từ bộ nhớ đệm hoặc lịch sử cũ
-  text = text.replace(/%%%(?:INLINE|DISPLAY)MATH_?\d+%%%/gi, '');
+  // Chuyển các mũi tên LaTeX đơn lẻ giữa câu văn thành mũi tên tiếng Việt trực quan
+  text = text.replace(/\$\s*\\(?:rightarrow|to|longrightarrow)\s*\$/g, ' → ');
+  text = text.replace(/\$\s*\\(?:Rightarrow|Longrightarrow)\s*\$/g, ' ⇒ ');
+  text = text.replace(/\$\s*\\(?:Leftrightarrow|iff)\s*\$/g, ' ⇔ ');
+
+  // Khắc phục và dịch sang tiếng Việt dễ hiểu nếu văn bản còn sót mã %%%INLINEMATH...%%% cũ
+  text = text.replace(
+    /Nhân:\s*%%%INLINEMATH_?\d+%%%/gi,
+    'Nhân hai phân số: lấy tử nhân tử, mẫu nhân mẫu ($\\dfrac{a}{b} \\cdot \\dfrac{c}{d} = \\dfrac{a \\cdot c}{b \\cdot d}$).'
+  );
+  text = text.replace(
+    /Chia:\s*%%%INLINEMATH_?\d+%%%\s*\(Nhân đảo ngược\)/gi,
+    'Chia hai phân số: lấy phân số thứ nhất nhân với phân số đảo ngược của phân số thứ hai ($\\dfrac{a}{b} : \\dfrac{c}{d} = \\dfrac{a}{b} \\cdot \\dfrac{d}{c} = \\dfrac{a \\cdot d}{b \\cdot c}$)'
+  );
+  text = text.replace(/%%%(?:INLINE|DISPLAY)MATH_?\d+%%%\s*:/gi, ' → ');
+  text = text.replace(/%%%(?:INLINE|DISPLAY)MATH_?\d+%%%/gi, ' → ');
 
   const codeBlocks = [];
   const displayMath = [];
