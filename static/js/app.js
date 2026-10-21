@@ -257,6 +257,9 @@ function renderMathString(mathExpr, displayMode = false) {
 function formatMarkdown(text) {
   if (!text) return '';
 
+  // Làm sạch các chuỗi đánh dấu cũ nếu còn sót từ bộ nhớ đệm hoặc lịch sử cũ
+  text = text.replace(/%%%(?:INLINE|DISPLAY)MATH_?\d+%%%/gi, '');
+
   const codeBlocks = [];
   const displayMath = [];
   const inlineMath = [];
@@ -1463,11 +1466,21 @@ window.loadHistoryItem = function (msgId) {
  * Đăng ký Service Worker để ứng dụng hỗ trợ hoạt động offline và cài đặt dạng PWA
  */
 function registerServiceWorker() {
+  if ('caches' in window) {
+    caches.keys().then((keys) => {
+      keys.forEach((key) => {
+        if (key !== 'toan-hoc-vui-v4') {
+          caches.delete(key);
+        }
+      });
+    });
+  }
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register('/static/sw.js')
+        .register('/static/sw.js?v=4')
         .then((reg) => {
+          reg.update();
           console.log('✅ Service Worker đã được kích hoạt thành công:', reg.scope);
         })
         .catch((err) => {
