@@ -1,5 +1,5 @@
 /* Service Worker - Toán Học Vui PWA */
-const CACHE_NAME = 'toan-hoc-vui-v4';
+const CACHE_NAME = 'toan-hoc-vui-v5';
 const STATIC_ASSETS = [
   '/static/manifest.json'
 ];
