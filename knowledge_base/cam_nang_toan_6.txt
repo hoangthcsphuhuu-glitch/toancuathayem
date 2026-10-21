@@ -1,11 +1,11 @@
 ============================================================
 CẨM NANG CHUYÊN SÂU MÔN TOÁN LỚP 6 THEO TUẦN, CHƯƠNG VÀ TỪNG BÀI HỌC
-Bộ sách: CHÂN TRỜI SÁNG TẠO (Tập 1 & Tập 2 — Chương trình GDPT 2018)
+Bộ sách: KẾT NỐI TRI THỨC VỚI CUỘC SỐNG (Tập 1 & Tập 2 — Chương trình GDPT 2018)
 Kế hoạch dạy học chi tiết 140 tiết (35 tuần) • Lý thuyết cốt lõi • Phân dạng toán • Ví dụ giải chi tiết • Bài tập 4 mức độ
 ============================================================
 
 📌 TỔNG QUAN CẤU TRÚC TÀI LIỆU TOÁN 6
-Tài liệu này tổng hợp toàn bộ kiến thức từ 3 cuốn sách Toán 6 trong thư mục Math_M_Ai_chatbot (SGK Toán 6 Tập 1, SGK Toán 6 Tập 2, Sách giáo viên Toán 6 - Bộ sách Chân trời sáng tạo). Nội dung gồm bảng Phân phối chương trình chi tiết 35 tuần học (140 tiết) và hệ thống hóa chuyên sâu toàn bộ 9 Chương, 43 Bài học kèm công thức, phương pháp giải, ví dụ mẫu và bài tập có hướng dẫn giải.
+Tài liệu này tổng hợp toàn bộ kiến thức từ 3 cuốn sách Toán 6 trong thư mục Math_M_Ai_chatbot (SGK Toán 6 Tập 1, SGK Toán 6 Tập 2, Sách giáo viên Toán 6 - Bộ sách Kết nối tri thức với cuộc sống). Nội dung gồm bảng Phân phối chương trình chi tiết 35 tuần học (140 tiết) và hệ thống hóa chuyên sâu toàn bộ 9 Chương, 43 Bài học kèm công thức, phương pháp giải, ví dụ mẫu và bài tập có hướng dẫn giải.
 
 --- MỤC 1: PHẦN I - PHÂN PHỐI CHƯƠNG TRÌNH CHI TIẾT 35 TUẦN TOÁN 6 (140 TIẾT) - HỌC KÌ I (TUẦN 1 - TUẦN 18: 72 TIẾT) ---
 • Tuần 1 (SH: 1, 2, 3 | HH: 1) — Chương 1 (SH), Chương 3 (HH):
