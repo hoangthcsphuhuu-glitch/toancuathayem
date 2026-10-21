@@ -357,11 +357,12 @@ def get_ai_response(user_message, user_grade=6, chat_history=None):
         # Xây dựng context gọn nhẹ để tăng tốc độ phản hồi
         context = relevant_content if relevant_content else "Áp dụng chuẩn kiến thức SGK Toán Kết nối tri thức."
 
-        # Tạo system prompt
-        system_prompt = Config.SYSTEM_PROMPT.format(
-            teacher_name=Config.TEACHER_NAME,
-            teacher_address=Config.TEACHER_ADDRESS,
-            knowledge_context=context,
+        # Tạo system prompt (dùng .replace thay vì .format để không xung đột với dấu ngoặc nhọn {a}{b} của LaTeX)
+        system_prompt = (
+            Config.SYSTEM_PROMPT
+            .replace('{teacher_name}', Config.TEACHER_NAME)
+            .replace('{teacher_address}', Config.TEACHER_ADDRESS)
+            .replace('{knowledge_context}', context)
         )
 
         # Xây dựng contents cho REST API (giới hạn 4 tin nhắn gần nhất để phản hồi nhanh nhất)
