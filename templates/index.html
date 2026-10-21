@@ -16,7 +16,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/static/css/style.css?v=4">
+  <link rel="stylesheet" href="/static/css/style.css?v=5">
 
   <!-- KaTeX CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
@@ -32,7 +32,7 @@
       <div class="auth-header">
         <span class="auth-logo">📐</span>
         <h2>Toán Học Vui</h2>
-        <p>Trợ lý AI Toán lớp 6, 7 — Thầy Lý Hoàng Em</p>
+        <p>Toán 6 &amp; 7 — Bộ sách Kết nối tri thức với cuộc sống</p>
       </div>
       <div class="auth-body">
         <form id="quickJoinForm" onsubmit="handleQuickJoin(event)">
@@ -71,7 +71,7 @@
           <div class="brand-icon">📐</div>
           <div class="brand-text">
             Toán Học Vui
-            <small>Trợ lý AI Toán lớp 6, 7</small>
+            <small>Kết nối tri thức với cuộc sống</small>
           </div>
         </div>
         <button class="btn-new-chat" onclick="startNewChat()">
@@ -89,24 +89,79 @@
         <button class="btn-logout" onclick="handleLogout()" title="Đăng xuất">🚪</button>
       </div>
 
-      <!-- Quick Topics -->
+      <!-- Curriculum Chapters (Dynamic by Grade 6 / Grade 7 - Kết nối tri thức) -->
       <div class="sidebar-section">
-        <div class="sidebar-section-title">Chủ đề nhanh</div>
-        <ul class="topic-list">
-          <li class="topic-item" onclick="askTopic('Số học')">
-            <span class="topic-icon">🔢</span> Số học
+        <div class="sidebar-section-title" id="sidebarChapterTitle">📚 Chương trình Toán 6 (KNTT)</div>
+        <ul class="topic-list" id="chapterList">
+          <li class="topic-item" onclick="askTopic('Phân phối chương trình 35 tuần Toán 6')">
+            <span class="topic-icon">📅</span>
+            <div class="topic-info">
+              <span class="topic-title">PPCT 35 tuần (140 tiết)</span>
+              <small class="topic-sub">Kế hoạch dạy học HK1 &amp; HK2</small>
+            </div>
           </li>
-          <li class="topic-item" onclick="askTopic('Hình học')">
-            <span class="topic-icon">📐</span> Hình học
+          <li class="topic-item" onclick="askTopic('Chương I: Tập hợp các số tự nhiên (Bài 1 - Bài 7)')">
+            <span class="topic-icon">🔢</span>
+            <div class="topic-info">
+              <span class="topic-title">Chương I: Số tự nhiên</span>
+              <small class="topic-sub">Bài 1–7: Tập hợp, Lũy thừa</small>
+            </div>
           </li>
-          <li class="topic-item" onclick="askTopic('Đại số')">
-            <span class="topic-icon">📊</span> Đại số
+          <li class="topic-item" onclick="askTopic('Chương II: Tính chia hết trong tập hợp các số tự nhiên (Bài 8 - Bài 12: Số nguyên tố, ƯCLN, BCNN)')">
+            <span class="topic-icon">➗</span>
+            <div class="topic-info">
+              <span class="topic-title">Chương II: Tính chia hết</span>
+              <small class="topic-sub">Bài 8–12: Nguyên tố, ƯCLN, BCNN</small>
+            </div>
           </li>
-          <li class="topic-item" onclick="askTopic('Phân số')">
-            <span class="topic-icon">🍕</span> Phân số
+          <li class="topic-item" onclick="askTopic('Chương III: Số nguyên (Bài 13 - Bài 17: Tập Z, Cộng trừ nhân chia, Quy tắc dấu ngoặc)')">
+            <span class="topic-icon">➕</span>
+            <div class="topic-info">
+              <span class="topic-title">Chương III: Số nguyên</span>
+              <small class="topic-sub">Bài 13–17: Tập Z, Dấu ngoặc</small>
+            </div>
           </li>
-          <li class="topic-item" onclick="askTopic('Thống kê')">
-            <span class="topic-icon">📈</span> Thống kê & Xác suất
+          <li class="topic-item" onclick="askTopic('Chương IV: Một số hình phẳng trong thực tiễn (Bài 18 - Bài 20: Chu vi và diện tích)')">
+            <span class="topic-icon">📐</span>
+            <div class="topic-info">
+              <span class="topic-title">Chương IV: Hình phẳng thực tiễn</span>
+              <small class="topic-sub">Bài 18–20: Chu vi &amp; Diện tích</small>
+            </div>
+          </li>
+          <li class="topic-item" onclick="askTopic('Chương V: Tính đối xứng của hình phẳng trong tự nhiên (Bài 21 - Bài 22)')">
+            <span class="topic-icon">🦋</span>
+            <div class="topic-info">
+              <span class="topic-title">Chương V: Tính đối xứng</span>
+              <small class="topic-sub">Bài 21–22: Trục &amp; Tâm đối xứng</small>
+            </div>
+          </li>
+          <li class="topic-item" onclick="askTopic('Chương VI: Phân số (Bài 23 - Bài 27: Bốn phép tính và Hai bài toán về phân số)')">
+            <span class="topic-icon">🍕</span>
+            <div class="topic-info">
+              <span class="topic-title">Chương VI: Phân số</span>
+              <small class="topic-sub">Bài 23–27: Phép tính &amp; 2 bài toán</small>
+            </div>
+          </li>
+          <li class="topic-item" onclick="askTopic('Chương VII: Số thập phân (Bài 28 - Bài 31: Làm tròn, Tỉ số và Tỉ số phần trăm)')">
+            <span class="topic-icon">🔟</span>
+            <div class="topic-info">
+              <span class="topic-title">Chương VII: Số thập phân</span>
+              <small class="topic-sub">Bài 28–31: Làm tròn &amp; Tỉ số %</small>
+            </div>
+          </li>
+          <li class="topic-item" onclick="askTopic('Chương VIII: Những hình học cơ bản (Bài 32 - Bài 37: Đoạn thẳng, Trung điểm, Góc)')">
+            <span class="topic-icon">📏</span>
+            <div class="topic-info">
+              <span class="topic-title">Chương VIII: Hình học cơ bản</span>
+              <small class="topic-sub">Bài 32–37: Đoạn thẳng, Trung điểm, Góc</small>
+            </div>
+          </li>
+          <li class="topic-item" onclick="askTopic('Chương IX: Dữ liệu và xác suất thực nghiệm (Bài 38 - Bài 43)')">
+            <span class="topic-icon">🎲</span>
+            <div class="topic-info">
+              <span class="topic-title">Chương IX: Thống kê &amp; Xác suất</span>
+              <small class="topic-sub">Bài 38–43: Biểu đồ &amp; Xác suất TN</small>
+            </div>
           </li>
         </ul>
       </div>
@@ -140,7 +195,7 @@
             🤖 Trợ lý Toán Học
             <span class="status-dot"></span>
           </div>
-          <div class="chat-header-subtitle">Luôn sẵn sàng giúp em học toán</div>
+          <div class="chat-header-subtitle" id="chatHeaderSubtitle">Toán Lớp 6 • Bộ sách Kết nối tri thức với cuộc sống (9 Chương • 43 Bài)</div>
         </div>
         <div class="grade-selector">
           <button class="grade-btn active" data-grade="6" onclick="selectGrade(6)">Lớp 6</button>
@@ -161,32 +216,33 @@
         <!-- Welcome Screen -->
         <div class="welcome-screen" id="welcomeScreen">
           <div class="welcome-icon">🤖</div>
-          <h1 class="welcome-title">Chào mừng đến Toán Học Vui!</h1>
-          <p class="welcome-subtitle">Mình là trợ lý AI, sẵn sàng giúp em giải toán, giải thích bài tập và ôn luyện kiến thức lớp 6, 7.</p>
+          <div class="welcome-badge" id="welcomeBookBadge">📘 Bộ sách Kết nối tri thức với cuộc sống — GDPT 2018</div>
+          <h1 class="welcome-title" id="welcomeTitle">Cẩm nang AI Toán Lớp 6</h1>
+          <p class="welcome-subtitle" id="welcomeSubtitle">Hệ thống hóa 9 Chương (Bài 1 – Bài 43), Phân phối 140 tiết (35 tuần), Lý thuyết cốt lõi, Phân dạng toán và Bài tập 4 mức độ.</p>
           <div class="suggested-questions" id="suggestedQuestions">
             <button class="suggested-btn" onclick="sendSuggested(this)">
-              <span class="suggested-icon">🧮</span>
-              <span>Giải phương trình bậc nhất một ẩn</span>
+              <span class="suggested-icon">➗</span>
+              <span>Chương II (Bài 11–12): Cách tìm ƯCLN và BCNN của hai số</span>
+            </button>
+            <button class="suggested-btn" onclick="sendSuggested(this)">
+              <span class="suggested-icon">➕</span>
+              <span>Chương III (Bài 14–16): Quy tắc cộng, trừ, nhân số nguyên và dấu ngoặc</span>
             </button>
             <button class="suggested-btn" onclick="sendSuggested(this)">
               <span class="suggested-icon">📐</span>
-              <span>Tính diện tích hình tam giác</span>
+              <span>Chương IV (Bài 20): Công thức tính chu vi và diện tích các tứ giác</span>
             </button>
             <button class="suggested-btn" onclick="sendSuggested(this)">
               <span class="suggested-icon">🍕</span>
-              <span>Cộng trừ phân số khác mẫu</span>
-            </button>
-            <button class="suggested-btn" onclick="sendSuggested(this)">
-              <span class="suggested-icon">📊</span>
-              <span>Tính trung bình cộng, số trung vị</span>
-            </button>
-            <button class="suggested-btn" onclick="sendSuggested(this)">
-              <span class="suggested-icon">🔢</span>
-              <span>Tìm ƯCLN và BCNN của hai số</span>
+              <span>Chương VI (Bài 25–27): Các phép tính phân số và Hai bài toán về phân số</span>
             </button>
             <button class="suggested-btn" onclick="sendSuggested(this)">
               <span class="suggested-icon">📏</span>
-              <span>Tính chu vi và diện tích hình tròn</span>
+              <span>Chương VIII (Bài 34–35): Tính độ dài đoạn thẳng và trung điểm đoạn thẳng</span>
+            </button>
+            <button class="suggested-btn" onclick="sendSuggested(this)">
+              <span class="suggested-icon">🎲</span>
+              <span>Chương IX (Bài 43): Cách tính xác suất thực nghiệm của một sự kiện</span>
             </button>
           </div>
         </div>
@@ -226,10 +282,10 @@
   <script>
     if ('caches' in window) {
       caches.keys().then(function(keys) {
-        keys.forEach(function(k) { if (k !== 'toan-hoc-vui-v4') caches.delete(k); });
+        keys.forEach(function(k) { if (k !== 'toan-hoc-vui-v5') caches.delete(k); });
       });
     }
   </script>
-  <script src="/static/js/app.js?v=4"></script>
+  <script src="/static/js/app.js?v=5"></script>
 </body>
 </html>
