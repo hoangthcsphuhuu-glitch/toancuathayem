@@ -1,0 +1,249 @@
+============================================================
+CẨM NANG CHUYÊN SÂU MÔN TOÁN LỚP 7 THEO TUẦN, CHƯƠNG VÀ TỪNG BÀI HỌC
+Bộ sách: CHÂN TRỜI SÁNG TẠO (Tập 1 & Tập 2 — Chương trình GDPT 2018)
+Kế hoạch dạy học chi tiết 140 tiết (35 tuần) • Lý thuyết cốt lõi • Phân dạng toán • Ví dụ giải chi tiết • Bài tập 4 mức độ
+============================================================
+
+📌 TỔNG QUAN CẤU TRÚC TÀI LIỆU CHUYÊN SÂU TOÁN 7
+Cuốn cẩm nang này được biên soạn ở mức độ chi tiết cao nhất, bám sát 100% mục lục SGK và SGV Toán 7 (Chân trời sáng tạo). Mỗi chương đều được phân rã tới từng bài học, từng tiết học theo Công văn 5512, đi kèm hệ thống định nghĩa, định lí, công thức, phương pháp giải từng dạng toán, ví dụ minh họa có lời giải mẫu từng bước và hệ thống bài tập tự luyện phân hóa 4 mức độ (Nhận biết – Thông hiểu – Vận dụng – Vận dụng cao) có hướng dẫn giải.
+
+--- MỤC 1: PHẦN I - PHÂN PHỐI CHƯƠNG TRÌNH CHI TIẾT 35 TUẦN TOÁN 7 (140 TIẾT) - HỌC KÌ I (TUẦN 1 - TUẦN 18: 72 TIẾT) ---
+Tổng thời lượng cả năm: 35 tuần × 4 tiết/tuần = 140 tiết. Học kì I gồm 18 tuần (72 tiết), Học kì II gồm 17 tuần (68 tiết).
+• Tuần 1 (ĐS: 1, 2 | HH: 1, 2) — Chương 1 (ĐS), Chương 3 (HH):
+  - ĐS Tiết 1-2: Bài 1. Tập hợp các số hữu tỉ (T1, T2)
+  - HH Tiết 1-2: Bài 1. Hình hộp chữ nhật - Hình lập phương (T1, T2)
+  - Yêu cầu cần đạt: Nhận biết số hữu tỉ, tập Q, số đối, biểu diễn và so sánh số hữu tỉ trên trục số. Mô tả đỉnh, cạnh, góc, đường chéo, mặt đáy, mặt bên của HHCN và hình lập phương.
+• Tuần 2 (ĐS: 3, 4 | HH: 3, 4) — Chương 1 (ĐS), Chương 3 (HH):
+  - ĐS Tiết 3-4: Bài 2. Các phép tính với số hữu tỉ (T1, T2)
+  - HH Tiết 3-4: Bài 2. Diện tích xung quanh và thể tích HHCN, HLP (T1, T2)
+  - Yêu cầu cần đạt: Thực hiện thành thạo cộng, trừ, nhân, chia số hữu tỉ; vận dụng tính chất giao hoán, kết hợp, phân phối. Tính được Sxq, Stp và thể tích V của HHCN, HLP trong bài toán thực tế.
+• Tuần 3 (ĐS: 5, 6 | HH: 5, 6) — Chương 1 (ĐS), Chương 3 (HH):
+  - ĐS Tiết 5: Bài 2. Các phép tính với số hữu tỉ (T3); ĐS Tiết 6: Bài 3. Lũy thừa của một số hữu tỉ (T1)
+  - HH Tiết 5-6: Bài 3. Hình lăng trụ đứng tam giác - Lăng trụ đứng tứ giác (T1, T2)
+• Tuần 4 (ĐS: 7, 8 | HH: 7, 8) — Chương 1 (ĐS), Chương 3 (HH):
+  - ĐS Tiết 7: Bài 3. Lũy thừa của một số hữu tỉ (T2); ĐS Tiết 8: Bài 4. Quy tắc dấu ngoặc và quy tắc chuyển vế (T1)
+  - HH Tiết 7-8: Bài 4. Diện tích xung quanh và thể tích hình lăng trụ đứng (T1, T2)
+  - Yêu cầu cần đạt: Vận dụng 5 công thức lũy thừa; nắm vững thứ tự thực hiện phép tính và quy tắc bỏ ngoặc. Tính được Sxq = Cđáy.h và V = Sđáy.h của lăng trụ đứng tam giác, tứ giác.
+• Tuần 5 (ĐS: 9, 10 | HH: 9, 10) — Chương 1 (ĐS), Chương 3 (HH):
+  - ĐS Tiết 9: Bài 4. Quy tắc dấu ngoặc và quy tắc chuyển vế (T2); ĐS Tiết 10: Bài 5. HĐTH&TN: Thực hành tính tiền điện
+  - HH Tiết 9: Bài 4. Sxq và V lăng trụ đứng (T3); HH Tiết 10: Bài 5. HĐTH&TN: Các bài toán về đo đạc và gấp hình
+• Tuần 6 (ĐS: 11, 12 | HH: 11, 12) — Chương 1, 2 (ĐS), Chương 3, 4 (HH):
+  - ĐS Tiết 11: Bài tập cuối chương 1; ĐS Tiết 12: Chương 2 - Bài 1. Số vô tỉ. Căn bậc hai số học (T1)
+  - HH Tiết 11: Bài tập cuối chương 3; HH Tiết 12: Chương 4 - Bài 1. Các góc ở vị trí đặc biệt (T1)
+• Tuần 7 (ĐS: 13, 14 | HH: 13, 14) — Chương 2 (ĐS), Chương 4 (HH):
+  - ĐS Tiết 13: Bài 1. Số vô tỉ. Căn bậc hai số học (T2); ĐS Tiết 14: Bài 2. Số thực. Giá trị tuyệt đối của một số thực (T1)
+  - HH Tiết 13: Bài 1. Các góc ở vị trí đặc biệt (T2); HH Tiết 14: Bài 2. Tia phân giác (T1)
+• Tuần 8 (ĐS: 15, 16 | HH: 15, 16) — Chương 2 (ĐS), Chương 4 (HH):
+  - ĐS Tiết 15: Bài 2. Số thực. Giá trị tuyệt đối của một số thực (T2); ĐS Tiết 16: Bài 3. Làm tròn số và ước lượng kết quả (T1)
+  - HH Tiết 15: Bài 2. Tia phân giác (T2); HH Tiết 16: Bài 3. Hai đường thẳng song song (T1)
+• Tuần 9 (ĐS: 17, 18 | HH: 17, 18) — Chương 2 (ĐS), Chương 4 (HH):
+  - ĐS Tiết 17: Bài 3. Làm tròn số và ước lượng kết quả (T2); ĐS Tiết 18: Ôn tập Giữa học kì I (Phần Số & Đại số)
+  - HH Tiết 17: Bài 3. Hai đường thẳng song song (T2); HH Tiết 18: Ôn tập Giữa học kì I (Phần Hình học)
+• Tuần 10 (KT: 19, 20 | ĐS: 20 | HH: 20): Kiểm tra Đánh giá Giữa học kì I (90 phút); ĐS Tiết 20: Bài 4. HĐTH&TN: Tính chỉ số BMI; HH Tiết 20: Bài 3. Hai đường thẳng song song (T3).
+• Tuần 11 (ĐS: 21 | TK: 22 | HH: 21, 22) — Chương 2, 5 (ĐS), Chương 4 (HH):
+  - ĐS Tiết 21: Bài tập cuối chương 2; TK Tiết 22: Chương 5 - Bài 1. Thu thập và phân loại dữ liệu (T1)
+  - HH Tiết 21-22: Bài 4. Định lí và chứng minh một định lí (T1, T2)
+• Tuần 12 (TK: 23, 24 | HH: 23, 24): TK Tiết 23-24: Bài 1. Thu thập và phân loại dữ liệu (T2, T3); HH Tiết 23: Bài 5. HĐTH&TN: Vẽ hai đường thẳng song song và đo góc bằng GeoGebra; HH Tiết 24: Bài tập cuối chương 4 (T1).
+• Tuần 13 (TK: 25, 26, 27 | HH: 25): TK Tiết 25-27: Bài 2. Biểu đồ hình quạt tròn (T1, T2, T3); HH Tiết 25: Bài tập cuối chương 4 (T2).
+• Tuần 14 (TK: 28, 29, 30 | HH: 26): TK Tiết 28-30: Bài 3. Biểu đồ đoạn thẳng (T1, T2, T3); HH Tiết 26: Chương 8 - Bài 1. Góc và cạnh của một tam giác (T1).
+• Tuần 15 (TK: 31, 32, 33 | HH: 27): TK Tiết 31: Bài 4. HĐTH&TN: Dùng biểu đồ phân tích kết quả học tập; TK Tiết 32-33: Bài tập cuối chương 5 (T1, T2); HH Tiết 27: Bài 1. Góc và cạnh của một tam giác (T2).
+• Tuần 16 (ĐS: 34, 35 | HH: 28, 29): ĐS Tiết 34-35: Ôn tập Cuối học kì I; HH Tiết 28-29: Bài 2. Tam giác bằng nhau (T1, T2: c-c-c và c-g-c).
+• Tuần 17 (ĐS: 36 | HH: 30 | KT: 2t): Ôn tập tổng hợp Cuối HK1 & Kiểm tra Đánh giá Cuối học kì I (90 phút).
+• Tuần 18 (ĐS: 37, 38 | HH: 31, 32): HH Tiết 31-32: Bài 2. Tam giác bằng nhau (T3, T4: g-c-g và tam giác vuông); ĐS Tiết 37-38: Trả bài kiểm tra Cuối kì I & Tổng kết Học kì I.
+
+--- MỤC 2: PHẦN I - PHÂN PHỐI CHƯƠNG TRÌNH TOÁN 7 - HỌC KÌ II (TUẦN 19 - TUẦN 35: 68 TIẾT) ---
+• Tuần 19 (ĐS: 39, 40 | HH: 33, 34) — Chương 6 (ĐS), Chương 8 (HH):
+  - ĐS Tiết 39-40: Bài 1. Tỉ lệ thức - Dãy tỉ số bằng nhau (T1, T2)
+  - HH Tiết 33-34: Bài 2. Tam giác bằng nhau (T5, T6 - Luyện tập)
+• Tuần 20 (ĐS: 41, 42 | HH: 35, 36) — Chương 6 (ĐS), Chương 8 (HH):
+  - ĐS Tiết 41: Bài 1. Tỉ lệ thức - Dãy tỉ số bằng nhau (T3); ĐS Tiết 42: Bài 2. Đại lượng tỉ lệ thuận (T1)
+  - HH Tiết 35-36: Bài 3. Tam giác cân (T1, T2)
+• Tuần 21 (ĐS: 43, 44 | HH: 37, 38) — Chương 6 (ĐS), Chương 8 (HH):
+  - ĐS Tiết 43-44: Bài 2. Đại lượng tỉ lệ thuận (T2, T3)
+  - HH Tiết 37: Bài 3. Tam giác cân (T3); HH Tiết 38: Bài 4. Đường vuông góc và đường xiên (T1)
+• Tuần 22 (ĐS: 45, 46 | HH: 39, 40) — Chương 6 (ĐS), Chương 8 (HH):
+  - ĐS Tiết 45-46: Bài 3. Đại lượng tỉ lệ nghịch (T1, T2)
+  - HH Tiết 39: Bài 4. Đường vuông góc và đường xiên (T2); HH Tiết 40: Bài 5. Đường trung trực của một đoạn thẳng (T1)
+• Tuần 23 (ĐS: 47, 48 | HH: 41, 42) — Chương 6 (ĐS), Chương 8 (HH):
+  - ĐS Tiết 47: Bài 3. Đại lượng tỉ lệ nghịch (T3); ĐS Tiết 48: Bài 4. HĐTH&TN: Các đại lượng tỉ lệ trong thực tế
+  - HH Tiết 41: Bài 5. Đường trung trực của một đoạn thẳng (T2); HH Tiết 42: Bài 6. Tính chất ba đường trung trực của tam giác (T1)
+• Tuần 24 (ĐS: 49, 50 | HH: 43, 44) — Chương 6, 7 (ĐS), Chương 8 (HH):
+  - ĐS Tiết 49: Bài tập cuối chương 6; ĐS Tiết 50: Chương 7 - Bài 1. Biểu thức số, biểu thức đại số (T1)
+  - HH Tiết 43: Bài 6. Tính chất ba đường trung trực của tam giác (T2); HH Tiết 44: Bài 7. Tính chất ba đường trung tuyến của tam giác (T1)
+• Tuần 25 (ĐS: 51, 52 | HH: 45, 46) — Chương 7 (ĐS), Chương 8 (HH):
+  - ĐS Tiết 51-52: Bài 1. Biểu thức số, biểu thức đại số (T2, T3)
+  - HH Tiết 45: Bài 7. Tính chất ba đường trung tuyến của tam giác (T2); HH Tiết 46: Bài 8. Tính chất ba đường cao của tam giác (T1)
+• Tuần 26 (ĐS: 53, 54 | HH: 47, 48): ĐS Tiết 53: Bài 2. Đa thức một biến (T1); ĐS Tiết 54: Ôn tập Giữa học kì II (Đại số); HH Tiết 47: Bài 8. Tính chất ba đường cao của tam giác (T2); HH Tiết 48: Ôn tập Giữa học kì II (Hình học).
+• Tuần 27 (KT: 2t | ĐS: 55, 56): Kiểm tra Đánh giá Giữa học kì II (90 phút); ĐS Tiết 55-56: Bài 2. Đa thức một biến (T2, T3).
+• Tuần 28 (ĐS: 57, 58, 59 | HH: 49): ĐS Tiết 57-59: Bài 3. Phép cộng và phép trừ đa thức một biến (T1, T2, T3); HH Tiết 49: Bài 9. Tính chất ba đường phân giác của tam giác (T1).
+• Tuần 29 (ĐS: 60, 61, 62 | HH: 50): ĐS Tiết 60-62: Bài 4. Phép nhân và phép chia đa thức một biến (T1, T2, T3); HH Tiết 50: Bài 9. Tính chất ba đường phân giác của tam giác (T2).
+• Tuần 30 (ĐS: 63, 64 | HH: 51, 52): ĐS Tiết 63: Bài 4. Phép nhân và phép chia đa thức một biến (T4); ĐS Tiết 64: Bài 5. HĐTH&TN: Cách tính điểm trung bình môn học kì; HH Tiết 51: Bài 10. HĐTH&TN: Làm giàn hoa tam giác trang trí lớp học; HH Tiết 52: Bài tập cuối chương 8 (T1).
+• Tuần 31 (ĐS: 65, 66 | XS: 67 | HH: 53): ĐS Tiết 65-66: Bài tập cuối chương 7 (T1, T2); XS Tiết 67: Chương 9 - Bài 1. Làm quen với biến cố ngẫu nhiên (T1); HH Tiết 53: Bài tập cuối chương 8 (T2).
+• Tuần 32 (XS: 68, 69, 70, 71): Bài 1. Làm quen với biến cố ngẫu nhiên (T2); Bài 2. Làm quen với xác suất của biến cố ngẫu nhiên (T1, T2); Bài 3. HĐTH&TN: Nhảy theo xúc xắc.
+• Tuần 33 (XS: 72 | ÔT: 3t): Bài tập cuối chương 9 & Ôn tập Cuối học kì II (Tỉ lệ thức, Đa thức, Xác suất, Tổng hợp Hình học Tam giác).
+• Tuần 34 (ÔT: 2t | KT: 2t): Ôn tập tổng hợp trước kì thi & Kiểm tra Đánh giá Cuối học kì II (90 phút).
+• Tuần 35 (TB: 4t): Trả bài và chữa đề kiểm tra Cuối học kì II & Tổng kết năm học, định hướng kiến thức lên lớp 8.
+
+--- MỤC 3: TOÁN 7 CHƯƠNG 1 - SỐ HỮU TỈ (12 TIẾT — TUẦN 1 ĐẾN TUẦN 6) ---
+Bài 1. Tập hợp các số hữu tỉ
+1. Khái niệm số hữu tỉ: Số hữu tỉ là số viết được dưới dạng phân số a/b với a, b ∈ Z và b ≠ 0. Tập hợp các số hữu tỉ được kí hiệu là Q.
+2. Nhận diện: Mọi số nguyên, hỗn số, số thập phân hữu hạn, số thập phân vô hạn tuần hoàn đều là số hữu tỉ (Ví dụ: -3 = -3/1; 1,25 = 5/4; 0,(3) = 1/3). Quan hệ bao hàm: N ⊂ Z ⊂ Q.
+3. Số đối: Số đối của số hữu tỉ x kí hiệu là -x. Tổng của hai số đối nhau luôn bằng 0: x + (-x) = 0. Số đối của 0 là 0.
+4. Biểu diễn và so sánh: Trên trục số, nếu x < y thì điểm x nằm bên trái điểm y (trục nằm ngang) hoặc bên dưới điểm y (trục thẳng đứng). Số hữu tỉ lớn hơn 0 gọi là số hữu tỉ dương; nhỏ hơn 0 gọi là số hữu tỉ âm; số 0 không là số hữu tỉ dương cũng không là số hữu tỉ âm.
+• Kỹ thuật giải toán - Phương pháp so sánh hai số hữu tỉ x và y:
+  - Cách 1 (Quy đồng mẫu dương): Đưa x và y về hai phân số có cùng mẫu số dương, phân số nào có tử lớn hơn thì lớn hơn.
+  - Cách 2 (Cùng tử số): Nếu hai phân số dương có cùng tử dương, phân số nào có mẫu nhỏ hơn thì lớn hơn.
+  - Cách 3 (Sử dụng số trung gian): So sánh qua số 0, số 1 hoặc -1 (Ví dụ: -3/7 < 0 < 1/5; hoặc 14/15 < 1 < 16/15).
+  - Cách 4 (Phần bù tới 1): Nếu a/b < 1 và c/d < 1 (a,b,c,d > 0) có 1 - a/b > 1 - c/d thì a/b < c/d (Ví dụ: so sánh 2025/2026 và 2026/2027).
+
+Bài 2. Các phép tính với số hữu tỉ
+1. Quy tắc Cộng và Trừ: Viết hai số hữu tỉ dưới dạng hai phân số có cùng mẫu dương: a/m + b/m = (a + b)/m; a/m - b/m = (a - b)/m.
+2. Quy tắc Nhân và Chia: Với a/b và c/d (b, d ≠ 0): (a/b) . (c/d) = (a.c)/(b.d); Với c/d ≠ 0: (a/b) : (c/d) = (a/b) . (d/c) = (a.d)/(b.c).
+3. Tính chất các phép tính: Giao hoán (x + y = y + x; x.y = y.x); Kết hợp ((x+y)+z = x+(y+z); (x.y).z = x.(y.z)); Cộng với 0 (x + 0 = x); Nhân với 1 (x.1 = x); Tính chất phân phối của phép nhân đối với phép cộng và trừ: x.(y ± z) = x.y ± x.z.
+💡 VÍ DỤ MINH HỌA (BÀI 1 & BÀI 2):
+• Ví dụ 1 (Tính hợp lí): Tính A = (-5/13) + (2/11) + (-8/13) + (9/11) - (1/2).
+  Lời giải: A = [(-5/13) + (-8/13)] + [(2/11) + (9/11)] - 1/2 = (-13/13) + (11/11) - 1/2 = -1 + 1 - 1/2 = -1/2.
+• Ví dụ 2 (Tính tổng dãy phân số có quy luật): Tính S = 1/(1.2) + 1/(2.3) + 1/(3.4) + ... + 1/(99.100).
+  Lời giải: Áp dụng công thức khử liên tiếp 1/[n(n+1)] = 1/n - 1/(n+1), ta có: S = (1 - 1/2) + (1/2 - 1/3) + (1/3 - 1/4) + ... + (1/99 - 1/100) = 1 - 1/100 = 99/100.
+
+Bài 3. Lũy thừa của một số hữu tỉ
+• Định nghĩa lũy thừa bậc n: x^n = x . x . ... . x (n thừa số x); (a/b)^n = (a^n)/(b^n). Quy ước: x^1 = x; x^0 = 1 (với x ≠ 0).
+• Tích hai lũy thừa cùng cơ số: x^m . x^n = x^(m + n) (Giữ nguyên cơ số x, cộng hai số mũ m và n).
+• Thương hai lũy thừa cùng cơ số: x^m : x^n = x^(m - n) (x ≠ 0, m ≥ n).
+• Lũy thừa của một lũy thừa: (x^m)^n = x^(m . n). Lưu ý: (x^m)^n = (x^n)^m.
+• Lũy thừa của một tích: (x . y)^n = x^n . y^n.
+• Lũy thừa của một thương: (x / y)^n = (x^n) / (y^n) (y ≠ 0).
+• Lũy thừa số mũ nguyên âm (Mở rộng): x^(-n) = 1 / (x^n) (x ≠ 0); Đặc biệt: (a/b)^(-n) = (b/a)^n.
+
+Bài 4. Quy tắc dấu ngoặc và quy tắc chuyển vế
+1. Quy tắc dấu ngoặc (+): a + (b - c + d) = a + b - c + d.
+2. Quy tắc dấu ngoặc (-): a - (b - c + d) = a - b + c - d (đổi dấu tất cả các số hạng trong ngoặc).
+3. Quy tắc chuyển vế: Khi chuyển một số hạng từ vế này sang vế kia của một đẳng thức, ta phải đổi dấu số hạng đó: x + a = b ⇒ x = b - a; x - a = b ⇒ x = b + a.
+4. Thứ tự thực hiện phép tính: Không ngoặc: Lũy thừa → Nhân và Chia → Cộng và Trừ. Có ngoặc: ( ) → [ ] → { }.
+💡 VÍ DỤ MINH HỌA (BÀI 3 & BÀI 4):
+• Ví dụ 3 (Tìm x bằng quy tắc chuyển vế): Tìm x biết 3/4 - (x - 1/2) = 5/6.
+  Lời giải: x - 1/2 = 3/4 - 5/6 = 9/12 - 10/12 = -1/12 ⇒ x = -1/12 + 1/2 = 5/12.
+• Ví dụ 4 (Tìm x trong lũy thừa):
+  a) (2x - 1)^3 = -8/27 ⇔ (2x - 1)^3 = (-2/3)^3 ⇔ 2x - 1 = -2/3 ⇔ 2x = 1/3 ⇔ x = 1/6.
+  b) (x + 1/2)^2 = 4/9 ⇔ x + 1/2 = 2/3 hoặc x + 1/2 = -2/3 ⇔ x = 1/6 hoặc x = -7/6.
+
+Bài 5. Hoạt động thực hành và trải nghiệm: Thực hành tính tiền điện
+• Công thức tính: Điện năng tiêu thụ (kWh) = Chỉ số công tơ cuối kì - Chỉ số công tơ đầu kì. Tiền điện chưa thuế = Tổng (Số kWh từng bậc × Đơn giá bậc đó). Tổng tiền thanh toán = Tiền điện chưa thuế × (1 + Thuế suất GTGT).
+⚠️ SAI LẦM HỌC SINH THƯỜNG GẶP Ở CHƯƠNG 1:
+1. Nhầm lẫn dấu của lũy thừa: (-2)^4 = 16 nhưng -2^4 = -16 (vì -2^4 là số đối của 2^4).
+2. Khi giải phương trình lũy thừa bậc chẵn X^2 = a^2 (a > 0), học sinh thường thiếu trường hợp âm X = -a.
+3. Khi bỏ dấu ngoặc có dấu trừ đằng trước, chỉ đổi dấu số hạng đầu tiên mà quên đổi dấu các số hạng phía sau.
+• Bài tập tự luyện Chương 1 (4 mức độ):
+  - Mức 1: a) A = (-3/7) + 5/13 + (-4/7) + 8/13 = 0; b) B = (3/4)^5 . (3/4)^2 : (3/4)^6 = 3/4.
+  - Mức 2: a) 2/3 . x - 1/2 = 1/10 ⇒ x = 9/10; b) 1/2 - (2/3 . x - 1/3) = 2/3 ⇒ x = 1/4.
+  - Mức 3: Rút gọn M = (4^5 . 9^4 - 2 . 6^9) / (2^10 . 3^8 + 6^8 . 20) = [-2 . 2^10 . 3^8] / [6 . 2^10 . 3^8] = -1/3.
+  - Mức 4: Cho S = 1/2^2 + 1/3^2 + ... + 1/100^2. Chứng minh S < 1: Vì 1/n^2 < 1/[(n-1)n] = 1/(n-1) - 1/n nên S < 1 - 1/100 = 99/100 < 1.
+
+--- MỤC 4: TOÁN 7 CHƯƠNG 2 - SỐ THỰC (10 TIẾT — TUẦN 6 ĐẾN TUẦN 11) ---
+Bài 1. Số vô tỉ. Căn bậc hai số học
+1. Số thập phân hữu hạn & vô hạn tuần hoàn: Phân số tối giản với mẫu dương mà mẫu không có ước nguyên tố khác 2 và 5 thì viết được dưới dạng số thập phân hữu hạn; nếu mẫu có ước nguyên tố khác 2 và 5 thì viết dưới dạng số thập phân vô hạn tuần hoàn.
+2. Số vô tỉ: Số viết được dưới dạng số thập phân vô hạn không tuần hoàn, kí hiệu là I (VD: √2 ≈ 1,41421356..., π ≈ 3,14159265...).
+3. Căn bậc hai số học: Căn bậc hai số học của một số a không âm (a ≥ 0) là số x không âm (x ≥ 0) sao cho x^2 = a, kí hiệu là √a. Như vậy: √a = x ⇔ {x ≥ 0 và x^2 = a}. Đặc biệt: √0 = 0; (√a)^2 = a (với a ≥ 0); √(a^2) = |a|.
+
+Bài 2. Số thực. Giá trị tuyệt đối của một số thực
+1. Tập hợp số thực R: Số hữu tỉ và số vô tỉ được gọi chung là số thực, kí hiệu là R (R = Q ∪ I; Q ∩ I = ∅).
+2. Giá trị tuyệt đối: Khoảng cách từ điểm x đến điểm gốc 0 trên trục số được gọi là giá trị tuyệt đối của x, kí hiệu |x|.
+3. Tính chất của |x|: |x| = x nếu x ≥ 0; |x| = -x nếu x < 0. Tính chất quan trọng: |x| ≥ 0 với mọi x ∈ R; |x| = |-x|; |x| ≥ x.
+💡 PHƯƠNG PHÁP & VÍ DỤ MINH HỌA (CHƯƠNG 2):
+• Dạng 1: |A(x)| = k. Nếu k < 0 ⇒ vô nghiệm; k = 0 ⇒ A(x) = 0; k > 0 ⇒ A(x) = k hoặc A(x) = -k.
+• Dạng 2: |A(x)| + |B(y)| = 0 ⇔ đồng thời A(x) = 0 và B(y) = 0.
+• Dạng 3 (Tìm GTNN, GTLN): Vì |A(x)| ≥ 0 ⇒ P = |A(x)| + m ≥ m (GTNN là m khi A(x) = 0); Q = m - |A(x)| ≤ m (GTLN là m khi A(x) = 0).
+• Ví dụ 1: Tìm x biết 2.|x - 3/2| - 1/3 = 5/3 ⇒ |x - 3/2| = 1 ⇒ x = 5/2 hoặc x = 1/2.
+• Ví dụ 2: Tìm GTNN của A = |2x - 4| + 2026. Vì |2x - 4| ≥ 0 ⇒ A ≥ 2026. Dấu '=' xảy ra khi x = 2.
+
+Bài 3. Làm tròn số và ước lượng kết quả
+• Quy đổi độ chính xác d sang hàng làm tròn: d = 50 ⇒ hàng trăm; d = 5 ⇒ hàng chục; d = 0,5 ⇒ hàng đơn vị; d = 0,05 ⇒ hàng phần mười; d = 0,005 ⇒ hàng phần trăm.
+Bài 4. HĐTH&TN: Tính chỉ số BMI = m / (h^2), với m là khối lượng (kg), h là chiều cao (m).
+• Bài tập tự luyện Chương 2:
+  - Mức 1: M = √36 + 3.√(9/4) - |-5/2| + (-2026)^0 = 6 + 9/2 - 5/2 + 1 = 9.
+  - Mức 2: Làm tròn a = 37 482,649 với d = 50 ⇒ 37 500; với d = 0,05 ⇒ 37 482,6.
+  - Mức 3: |x - 2| + (y + 3)^2 = 0 ⇔ x = 2 và y = -3.
+  - Mức 4: Tìm GTNN của P = |x - 1| + |x - 5| = |x - 1| + |5 - x| ≥ |x - 1 + 5 - x| = 4 (khi 1 ≤ x ≤ 5).
+
+--- MỤC 5: TOÁN 7 CHƯƠNG 3 - CÁC HÌNH KHỐI TRONG THỰC TIỄN (11 TIẾT — TUẦN 1 ĐẾN TUẦN 6) ---
+• Hình hộp chữ nhật (Kích thước đáy a, b; chiều cao c): 8 đỉnh, 12 cạnh, 6 mặt là hình chữ nhật, 4 đường chéo bằng nhau.
+  - Diện tích xung quanh: Sxq = 2.(a + b).c
+  - Diện tích toàn phần: Stp = Sxq + 2.Sđáy = 2.(a + b).c + 2.a.b (Diện tích quét sơn phòng: Stp - Sđáy dưới - Scửa)
+  - Thể tích: V = a . b . c = Sđáy . c
+• Hình lập phương (Độ dài cạnh a): 8 đỉnh, 12 cạnh bằng nhau, 6 mặt đều là hình vuông bằng nhau.
+  - Sxq = 4 . a^2 | Stp = 6 . a^2 | Thể tích: V = a^3
+• Hình lăng trụ đứng tam giác (Cạnh đáy a, b, c; chiều cao h): 6 đỉnh, 9 cạnh, 5 mặt (2 mặt đáy là tam giác, 3 mặt bên là hình chữ nhật).
+  - Sxq = Cđáy . h = (a + b + c) . h | Stp = Sxq + 2 . Sđáy | Thể tích: V = Sđáy . h
+• Hình lăng trụ đứng tứ giác (Chu vi đáy Cđáy; chiều cao h): 8 đỉnh, 12 cạnh, 6 mặt (2 mặt đáy là tứ giác, 4 mặt bên là hình chữ nhật).
+  - Sxq = Cđáy . h | Stp = Sxq + 2 . Sđáy | Thể tích: V = Sđáy . h
+💡 VÍ DỤ MINH HỌA THỰC TIỄN (CHƯƠNG 3):
+• Ví dụ 1 (Sơn tường phòng học): Phòng học HHCN dài 8 m, rộng 6 m, cao 3,5 m; diện tích cửa 12,5 m^2; giá sơn 45 000 đ/m^2.
+  Lời giải: Sxq = 2.(8 + 6).3,5 = 98 m^2; Strần = 8.6 = 48 m^2; S cần sơn = 98 + 48 - 12,5 = 133,5 m^2; Chi phí = 133,5 × 45 000 = 6 007 500 đồng.
+• Ví dụ 2 (Lều trại lăng trụ đứng tam giác): Chiều dài lều h = 3 m; đáy tam giác cân cạnh đáy 2,4 m, hai cạnh bên 1,5 m, chiều cao đáy 0,9 m.
+  Lời giải: Sđáy = 1/2 . 2,4 . 0,9 = 1,08 m^2; V = 1,08 . 3 = 3,24 m^3; Cđáy = 2,4 + 1,5 + 1,5 = 5,4 m; Sxq = 5,4 . 3 = 16,2 m^2; Stp = 16,2 + 2 . 1,08 = 18,36 m^2.
+
+--- MỤC 6: TOÁN 7 CHƯƠNG 4 & CHƯƠNG 5 - GÓC, ĐƯỜNG THẲNG SONG SONG & THỐNG KÊ ---
+CHƯƠNG 4: GÓC VÀ ĐƯỜNG THẲNG SONG SONG (14 TIẾT — TUẦN 6 ĐẾN TUẦN 13)
+1. Hai góc kề nhau: ∠xOz + ∠zOy = ∠xOy. Hai góc kề bù: Tổng số đo luôn bằng 180°. Hai góc đối đỉnh: Hai góc đối đỉnh thì bằng nhau.
+2. Tia phân giác của một góc: Oz là phân giác của ∠xOy ⇔ ∠xOz = ∠zOy = (1/2)∠xOy. Hai tia phân giác của hai góc kề bù thì vuông góc với nhau (tạo góc 90°).
+3. Dấu hiệu nhận biết hai đường thẳng song song: Đường thẳng c cắt a và b tạo thành (1) cặp góc so le trong bằng nhau, HOẶC (2) cặp góc đồng vị bằng nhau, HOẶC (3) cặp góc trong cùng phía bù nhau (180°) thì a // b.
+4. Tiên đề Euclid: Qua một điểm nằm ngoài một đường thẳng, chỉ có một đường thẳng song song với đường thẳng đó.
+5. Ba quan hệ từ vuông góc đến song song: (a) c ⊥ a và c ⊥ b ⇒ a // b; (b) a // b và c ⊥ a ⇒ c ⊥ b; (c) a // c và b // c ⇒ a // b.
+💡 Ví dụ minh họa (Kỹ thuật kẻ tia phụ song song): Cho Ax // Cy, ∠xAB = 130°, ∠BCy = 140°. Qua B kẻ tia Bz // Ax ⇒ ∠ABz = 180° - 130° = 50°; vì Bz // Cy ⇒ ∠zBC = 180° - 140° = 40° ⇒ ∠ABC = 50° + 40° = 90° (AB ⊥ BC).
+
+CHƯƠNG 5: MỘT SỐ YẾU TỐ THỐNG KÊ (12 TIẾT — TUẦN 11 ĐẾN TUẦN 15)
+• Phân loại dữ liệu: Dữ liệu số (định lượng: chiều cao, điểm số, nhiệt độ...) và Dữ liệu không phải là số (định tính: màu sắc, môn thể thao, xếp loại...).
+• Biểu đồ hình quạt tròn: Tổng các thành phần bằng 100%. Giá trị của nhóm có tỉ lệ a% trong tổng số N đối tượng là: Giá trị = N × a / 100.
+• Biểu đồ đoạn thẳng: Trục ngang biểu diễn thời gian, trục đứng biểu diễn đại lượng, nhận diện xu thế tăng/giảm.
+
+--- MỤC 7: TOÁN 7 CHƯƠNG 6 - CÁC ĐẠI LƯỢNG TỈ LỆ (11 TIẾT — TUẦN 19 ĐẾN TUẦN 24) ---
+Bài 1. Tỉ lệ thức – Dãy tỉ số bằng nhau
+1. Định nghĩa: Tỉ lệ thức là đẳng thức của hai tỉ số: a/b = c/d (b, d ≠ 0). Tính chất cơ bản: Nếu a/b = c/d thì a.d = b.c.
+2. Tính chất dãy tỉ số bằng nhau: a/b = c/d = e/f = (a + c + e)/(b + d + f) = (a - c + e)/(b - d + f). Khi nói x, y, z tỉ lệ với a, b, c tức là x/a = y/b = z/c.
+💡 VÍ DỤ & KỸ THUẬT GIẢI TOÁN DÃY TỈ SỐ BẰNG NHAU:
+• Ví dụ 1 (Dãy tỉ số có hệ số): Tìm x, y, z biết x/2 = y/3 = z/5 và 2x + 3y - z = 24.
+  Lời giải: x/2 = y/3 = z/5 = (2x)/4 = (3y)/9 = (2x + 3y - z)/(4 + 9 - 5) = 24/8 = 3 ⇒ x = 6; y = 9; z = 15.
+• Ví dụ 2 (Phương pháp đặt k khi có tích hoặc bình phương): Tìm x, y biết x/3 = y/4 và x.y = 48.
+  Lời giải: Đặt x/3 = y/4 = k ⇒ x = 3k, y = 4k. Thay vào x.y = 48 ⇒ 12k^2 = 48 ⇒ k^2 = 4 ⇒ k = ±2 ⇒ (x; y) = (6; 8) hoặc (-6; -8).
+
+Bài 2 & Bài 3. Đại lượng tỉ lệ thuận và Đại lượng tỉ lệ nghịch
+• Đại lượng tỉ lệ thuận: y = k . x (k ≠ 0). Tính chất: y1/x1 = y2/x2 = ... = k; x1/x2 = y1/y2.
+• Đại lượng tỉ lệ nghịch: y = a / x hay x . y = a (a ≠ 0). Tính chất: x1.y1 = x2.y2 = ... = a; x1/x2 = y2/y1.
+💡 Ví dụ 3 (Toán thực tế Tỉ lệ nghịch): Để hoàn thành một đoạn đường giao thông nông thôn tại xã Phú Hữu, đội thi công dự kiến cần 15 công nhân làm trong 12 ngày. Thực tế tăng cường thêm 5 công nhân (thành 20 công nhân). Gọi x là số ngày thực tế: 15 . 12 = 20 . x ⇒ x = 9 ngày ⇒ Hoàn thành sớm hơn dự kiến: 12 - 9 = 3 ngày.
+
+--- MỤC 8: TOÁN 7 CHƯƠNG 7 - BIỂU THỨC ĐẠI SỐ VÀ ĐA THỨC MỘT BIẾN (17 TIẾT — TUẦN 24 ĐẾN TUẦN 31) ---
+1. Biểu thức đại số, Đơn thức, Đa thức một biến:
+• Sau khi thu gọn và sắp xếp đa thức P(x) = a_n.x^n + a_(n-1).x^(n-1) + ... + a_1.x + a_0 (a_n ≠ 0): Bậc của P(x) là n; Hệ số cao nhất là a_n; Hệ số tự do là a_0.
+• Nghiệm của đa thức một biến: Nếu P(a) = 0 thì x = a là một nghiệm của P(x).
+  - Mẹo kiểm tra nhanh nghiệm: (1) Nếu tổng tất cả các hệ số của P(x) bằng 0 thì x = 1 là một nghiệm; (2) Nếu tổng các hệ số bậc chẵn bằng tổng các hệ số bậc lẻ thì x = -1 là một nghiệm.
+2. Cộng, Trừ, Nhân, Chia đa thức một biến:
+• Phép chia có dư: A = B.Q + R (R = 0 hoặc bậc của R < bậc của B). Nếu R = 0 thì A chia hết cho B.
+💡 VÍ DỤ MINH HỌA ĐA THỨC MỘT BIẾN (CHƯƠNG 7):
+• Ví dụ 1: Cho P(x) = 3x^3 - 2x^2 + 5x - 3x^3 + 2x^2 - 15. Thu gọn: P(x) = 5x - 15 (bậc 1, hệ số cao nhất 5, hệ số tự do -15). Nghiệm: 5x - 15 = 0 ⇔ x = 3.
+• Ví dụ 2: Tìm m để A(x) = 2x^3 - 3x^2 + x + m chia hết cho B(x) = x + 2.
+  Lời giải: Theo định lí Bézout (hoặc đặt tính chia được dư R = m - 30), A(x) chia hết cho (x + 2) khi A(-2) = 0 ⇔ 2.(-2)^3 - 3.(-2)^2 + (-2) + m = 0 ⇔ -30 + m = 0 ⇔ m = 30.
+
+--- MỤC 9: TOÁN 7 CHƯƠNG 8 & CHƯƠNG 9 - HÌNH HỌC TAM GIÁC & XÁC SUẤT ---
+CHƯƠNG 8: HÌNH HỌC PHẲNG — TAM GIÁC (28 TIẾT — TUẦN 14 ĐẾN TUẦN 31)
+1. Góc, Cạnh, Đường vuông góc & Đường xiên:
+• Tổng ba góc của một tam giác bằng 180°. Trong tam giác vuông, hai góc nhọn phụ nhau (∠B + ∠C = 90°). Góc ngoài bằng tổng hai góc trong không kề với nó.
+• Quan hệ góc và cạnh đối diện: Góc đối diện với cạnh lớn hơn là góc lớn hơn và ngược lại.
+• Bất đẳng thức tam giác: |b - c| < a < b + c.
+• Đường vuông góc AH luôn ngắn hơn đường xiên AB: AH < AB.
+2. Tam giác bằng nhau & Tam giác cân:
+• Tam giác thường: (1) c.c.c; (2) c.g.c; (3) g.c.g. Tam giác vuông: có thêm (1) Cạnh huyền – Góc nhọn (ch-gn); (2) Cạnh huyền – Cạnh góc vuông (ch-cgv).
+• Tam giác cân (ΔABC cân tại A ⇔ AB = AC ⇔ ∠B = ∠C). Tam giác đều: 3 cạnh bằng nhau, mỗi góc bằng 60° (chứng minh: tam giác cân có 1 góc bằng 60°).
+3. Bốn đường đồng quy trong tam giác ΔABC:
+• (1) Đường trung trực (vuông góc với cạnh tại trung điểm) → Đồng quy tại O (Tâm đường tròn ngoại tiếp, cách đều 3 đỉnh: OA = OB = OC).
+• (2) Đường trung tuyến (nối từ đỉnh tới trung điểm cạnh đối diện) → Đồng quy tại G (Trọng tâm, cách mỗi đỉnh 2/3 độ dài đường trung tuyến: AG/AM = BG/BN = CG/CP = 2/3; GM = 1/3 AM; AG = 2 GM).
+• (3) Đường cao (kẻ từ đỉnh vuông góc với cạnh đối diện) → Đồng quy tại H (Trực tâm).
+• (4) Đường phân giác (chia đôi góc ở đỉnh) → Đồng quy tại I (Tâm đường tròn nội tiếp, cách đều 3 cạnh).
+• Tính chất đặc biệt: Trong tam giác cân, đường trung tuyến xuất phát từ đỉnh cân đồng thời là đường phân giác, đường cao và đường trung trực ứng với cạnh đáy.
+
+CHƯƠNG 9: MỘT SỐ YẾU TỐ XÁC SUẤT (6 TIẾT — TUẦN 31 ĐẾN TUẦN 33)
+1. Ba loại biến cố: Biến cố chắc chắn (P = 1); Biến cố không thể (P = 0); Biến cố ngẫu nhiên (0 < P < 1).
+2. Công thức xác suất đồng khả năng: P(A) = k / n = (Số kết quả thuận lợi cho biến cố A) / (Tổng số các kết quả đồng khả năng có thể xảy ra).
+💡 Ví dụ minh họa: Rút ngẫu nhiên 1 thẻ từ hộp có 12 thẻ ghi số từ 1 đến 12 (n = 12):
+• A: 'Số nhỏ hơn 13' → Biến cố chắc chắn ⇒ P(A) = 1.
+• B: 'Số nguyên tố' → Kết quả thuận lợi {2; 3; 5; 7; 11} (k = 5) ⇒ P(B) = 5/12.
+• C: 'Số chính phương' → Kết quả thuận lợi {1; 4; 9} (k = 3) ⇒ P(C) = 3/12 = 1/4.
