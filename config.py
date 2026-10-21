@@ -35,14 +35,10 @@ class Config:
     PDF_FOLDER = os.path.join(BASE_DIR)
     KNOWLEDGE_BASE_FOLDER = os.path.join(BASE_DIR, 'knowledge_base')
 
-    # Danh sách file PDF sách giáo khoa
+    # Danh sách file kiến thức chuyên sâu Toán 6 & Toán 7 (Chân trời sáng tạo)
     PDF_FILES = {
-        '06-sgk-toan-6-tap-mot.pdf': 'SGK Toán 6 Tập 1',
-        '06-sgk-toan-6-tap-hai.pdf': 'SGK Toán 6 Tập 2',
-        '06-sgv-toan-6.pdf': 'SGV Toán 6',
-        '07-sgk-toan-7-tap-mot.pdf': 'SGK Toán 7 Tập 1',
-        '07-sgk-toan-7-tap-hai.pdf': 'SGK Toán 7 Tập 2',
-        '07-sgv-toan-7.pdf': 'SGV Toán 7',
+        'cam_nang_toan_6.txt': 'Cẩm nang chuyên sâu Toán 6 (Chân trời sáng tạo)',
+        'cam_nang_toan_7.txt': 'Cẩm nang chuyên sâu Toán 7 (Chân trời sáng tạo)',
     }
 
     # Rate Limiting
@@ -70,34 +66,29 @@ class Config:
 THÔNG TIN:
 - Ứng dụng được phát triển bởi {teacher_name}
 - Địa chỉ: {teacher_address}
-- Nội dung dựa trên Sách Giáo Khoa (SGK) Toán lớp 6 và lớp 7 (Chương trình GDPT 2018 - Bộ sách "Kết nối tri thức với cuộc sống")
+- Nội dung dựa trên Cẩm nang chuyên sâu & Sách Giáo Khoa (SGK) Toán lớp 6 và lớp 7 (Chương trình GDPT 2018 - Bộ sách "Chân trời sáng tạo" - Tập 1 & Tập 2, 140 tiết / 35 tuần)
 
-CHƯƠNG TRÌNH TOÁN LỚP 6:
-- Số tự nhiên, tập hợp, phần tử
-- Các phép tính: cộng, trừ, nhân, chia số tự nhiên
-- Lũy thừa với số mũ tự nhiên
-- Chia hết và chia có dư, tính chất chia hết
-- Số nguyên tố, hợp số, phân tích ra thừa số nguyên tố
-- ƯCLN, BCNN
-- Số nguyên: so sánh, cộng, trừ, nhân, chia
-- Phân số: rút gọn, quy đồng, so sánh, cộng trừ nhân chia
-- Số thập phân
-- Hình học: điểm, đường thẳng, tia, đoạn thẳng, góc, tam giác, tứ giác
-- Đối xứng trục, đối xứng tâm
-- Thống kê: thu thập, phân loại dữ liệu, biểu đồ
+CHƯƠNG TRÌNH TOÁN LỚP 6 (CHÂN TRỜI SÁNG TẠO - 9 CHƯƠNG):
+- Chương 1: Số tự nhiên (Tập hợp, các phép tính, lũy thừa, chia hết, dấu hiệu chia hết cho 2, 3, 5, 9, số nguyên tố, hợp số, ƯCLN, BCNN)
+- Chương 2: Số nguyên (Tập Z, thứ tự trong Z, cộng, trừ, nhân, chia hết hai số nguyên)
+- Chương 3: Hình học trực quan - Các hình phẳng trong thực tiễn (Hình vuông, tam giác đều, lục giác đều, hình chữ nhật, hình thoi, hình bình hành, hình thang cân, chu vi và diện tích)
+- Chương 4: Một số yếu tố thống kê (Thu thập và phân loại dữ liệu, biểu diễn dữ liệu trên bảng, biểu đồ tranh, biểu đồ cột, biểu đồ cột kép)
+- Chương 5: Phân số (Tính chất cơ bản, so sánh, cộng, trừ, nhân, chia phân số, hỗn số, hai bài toán cơ bản về phân số)
+- Chương 6: Số thập phân và Tỉ số phần trăm (Các phép tính số thập phân, làm tròn và ước lượng, tỉ số, bài toán tỉ số phần trăm, lãi suất, giảm giá)
+- Chương 7: Tính đối xứng của hình phẳng (Hình có trục đối xứng, hình có tâm đối xứng)
+- Chương 8: Hình học phẳng - Các hình hình học cơ bản (Điểm, đường thẳng, 3 điểm thẳng hàng, tia, đoạn thẳng, trung điểm của đoạn thẳng, góc, số đo góc, góc nhọn/vuông/tù/bẹt)
+- Chương 9: Một số yếu tố xác suất (Phép thử nghiệm, sự kiện, xác suất thực nghiệm P = n(A)/N)
 
-CHƯƠNG TRÌNH TOÁN LỚP 7:
-- Số hữu tỉ: cộng, trừ, nhân, chia, lũy thừa
-- Số thực, căn bậc hai
-- Tỉ lệ thức, dãy tỉ số bằng nhau
-- Đại lượng tỉ lệ thuận, tỉ lệ nghịch
-- Biểu thức đại số, đơn thức, đa thức
-- Thống kê: tần số, tần suất, biểu đồ
-- Tam giác: tổng ba góc, tam giác bằng nhau (c.c.c, c.g.c, g.c.g)
-- Tam giác cân, tam giác đều
-- Quan hệ giữa góc và cạnh trong tam giác
-- Đường thẳng song song, đường thẳng vuông góc
-- Định lí Pythagore
+CHƯƠNG TRÌNH TOÁN LỚP 7 (CHÂN TRỜI SÁNG TẠO - 9 CHƯƠNG):
+- Chương 1: Số hữu tỉ (Tập Q, cộng trừ nhân chia số hữu tỉ, lũy thừa của số hữu tỉ, quy tắc dấu ngoặc và quy tắc chuyển vế)
+- Chương 2: Số thực (Số vô tỉ, căn bậc hai số học, tập số thực R, giá trị tuyệt đối |x|, làm tròn số với độ chính xác d, tính chỉ số BMI)
+- Chương 3: Các hình khối trong thực tiễn (Hình hộp chữ nhật, hình lập phương, hình lăng trụ đứng tam giác, lăng trụ đứng tứ giác, diện tích xung quanh Sxq, diện tích toàn phần Stp và thể tích V)
+- Chương 4: Góc và đường thẳng song song (Góc kề bù, đối đỉnh, tia phân giác, dấu hiệu và tính chất hai đường thẳng song song, tiên đề Euclid, định lí và chứng minh định lí)
+- Chương 5: Một số yếu tố thống kê (Dữ liệu định tính/định lượng, biểu đồ hình quạt tròn, biểu đồ đoạn thẳng)
+- Chương 6: Các đại lượng tỉ lệ (Tỉ lệ thức, dãy tỉ số bằng nhau, đại lượng tỉ lệ thuận y = kx, đại lượng tỉ lệ nghịch xy = a)
+- Chương 7: Biểu thức đại số và Đa thức một biến (Đơn thức, đa thức một biến, bậc, hệ số cao nhất, hệ số tự do, nghiệm của đa thức, cộng trừ nhân chia đa thức một biến)
+- Chương 8: Hình học phẳng - Tam giác (Tổng 3 góc, quan hệ góc và cạnh đối diện, bất đẳng thức tam giác, đường vuông góc và đường xiên, tam giác bằng nhau c.c.c, c.g.c, g.c.g, ch-gn, ch-cgv, tam giác cân, tam giác đều, 4 đường đồng quy: trung trực, trung tuyến, đường cao, phân giác)
+- Chương 9: Một số yếu tố xác suất (Biến cố chắc chắn, biến cố không thể, biến cố ngẫu nhiên, xác suất P(A) = k/n)
 
 QUY TẮC:
 1. LUÔN trả lời bằng tiếng Việt
