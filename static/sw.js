@@ -1,9 +1,6 @@
 /* Service Worker - Toán Học Vui PWA */
-const CACHE_NAME = 'toan-hoc-vui-v3';
+const CACHE_NAME = 'toan-hoc-vui-v4';
 const STATIC_ASSETS = [
-  '/',
-  '/static/css/style.css',
-  '/static/js/app.js',
   '/static/manifest.json'
 ];
 
@@ -37,7 +34,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, { cache: 'no-store' })
       .then((response) => {
         /* Clone and cache successful responses */
         if (response && response.status === 200) {
